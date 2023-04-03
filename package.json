@@ -1,0 +1,49 @@
+{
+  "name": "tarvis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.babel.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build --prod"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
+    "@babel/register": "^7.13.16",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-replace": "^1.1.3",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify-es": "^2.0.0",
+    "gulp-wp-pot": "^2.5.0",
+    "gulp-zip": "^5.1.0",
+    "node-sass": "^6.0.1",
+    "sass": "^1.43.4",
+    "vinyl-named": "^1.1.0",
+    "webpack-stream": "^6.1.2",
+    "yargs": "^17.0.1"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^4.0.9",
+    "@popperjs/core": "^2.10.2",
+    "bootstrap": "^5.1.3",
+    "clipboard": "^2.0.11",
+    "jquery": "^3.6.0",
+    "masonry-layout": "^4.2.2",
+    "owl.carousel": "^2.3.4",
+    "selectric": "^1.13.0",
+    "validator": "^13.7.0"
+  }
+}

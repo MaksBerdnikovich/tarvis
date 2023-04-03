@@ -1,0 +1,56 @@
+.auth-group{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 310px;
+
+    &__title{
+        font-size: 30px;
+        font-weight: 700;
+        color: $primary;
+        margin-bottom: 20px;
+    }
+
+    &__qr{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        b{
+            font-size: 16px;
+            padding-bottom: 3px;
+        }
+
+        strong{
+            font-size: 24px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        i{
+            margin: 25px 0;
+        }
+
+        img{
+            width: auto;
+        }
+    }
+
+    &__code{
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+
+        .input-group{
+            width: 100%;
+            text-align: left;
+        }
+
+        input{
+            min-width: 100%;
+        }
+    }
+}

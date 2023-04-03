@@ -1,0 +1,19 @@
+.styled-list{
+    display: flex;
+    flex-direction: column;
+}
+.styled-list li{
+    position: relative;
+    padding-left: 15px;
+    margin-bottom: 1rem;
+
+    &:before{
+        content: "\e902";
+        font-family: 'icons';
+        position: absolute;
+        top: 6px;
+        left: 0;
+        font-size: 6px;
+        color: $primary;
+    }
+}

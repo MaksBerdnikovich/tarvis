@@ -1,0 +1,43 @@
+.radio-group {
+    position: relative;
+    display: flex;
+    width: 100px;
+    height: 50px;
+    border-radius: 9px;
+    overflow: hidden;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+.radio-handle{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+.checker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: #0c1b41;
+    transition: .2s;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1;
+    color: #8393bd;
+}
+
+.radio-group input:checked + .checker {
+    background-color: #01a9e0;
+    color: #ffffff;
+}

@@ -1,0 +1,243 @@
+.deposit-calc{
+    position: relative;
+
+    &__tabs{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__tabs-nav{
+        position: relative;
+
+        ul{
+            display: flex;
+        }
+
+        li{
+            width: 50%;
+            max-width: 250px;
+        }
+
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 90px;
+            background-color: transparent;
+            text-align: center;
+            text-transform: uppercase;
+
+            &.active{
+                background-color: $primary;
+                opacity: 1;
+            }
+
+            span{
+                font-size: 12px;
+                letter-spacing: 1.5px;
+                color: $secondary;
+
+                @include media-mdx{
+                    letter-spacing: 0;
+                }
+            }
+
+            b{
+                font-size: 17px;
+                padding-top: 5px;
+
+                @include media-mdx{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    &__tabs-body{
+        position: relative;
+        min-height: 160px;
+        background-color: $primary;
+    }
+
+    &__balance{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 45px 50px;
+
+        @include media-mdx{
+            padding: 45px 20px;
+        }
+
+        @include media-sm{
+            .title-h3{
+                font-size: 36px;
+            }
+        }
+    }
+
+    &__currency{
+        display: flex;
+        flex-direction: column;
+        padding: 30px 50px;
+
+        @include media-mdx{
+            padding: 30px 20px;
+        }
+
+        .tx-white{
+            font-size: 17px;
+        }
+    }
+
+    &__form {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form-group{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+    }
+
+    &__form-group-item{
+        padding: 10px;
+
+        input[type=radio] {
+            display: none;
+        }
+
+        label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            border: 2px solid $white;
+
+            font-size: 22px;
+            color: $white;
+            cursor: pointer;
+            transition: $transition;
+
+            @include media-xs{
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+
+        label:hover {
+            opacity: 0.8;
+        }
+
+        input[type=radio]:checked + label {
+            background-color: $styled;
+            border-color: $styled;
+            color: $white;
+        }
+
+        input[type=radio]:disabled + label {
+            opacity: 0.3;
+        }
+    }
+
+    &__amount{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 169px;
+        padding: 30px 50px;
+        margin-top: 20px;
+        background-color: $primary;
+
+        @include media-mdx{
+            padding: 30px 20px;
+        }
+
+        .tx-white{
+            font-size: 17px;
+            padding-bottom: 10px;
+        }
+
+        input{
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: 55px;
+            padding: 0 25px;
+            border: 1px solid transparent;
+            background-color: rgba($white, 0.2);
+            color: $white;
+            font-weight: 500;
+            font-size: 17px;
+
+            &.error{
+                border-color: $danger;
+            }
+
+            @include placeholder(rgba($white, 0.5))
+        }
+
+        .error-text{
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            display: none;
+            font-size: 13px;
+            color: $danger;
+        }
+    }
+
+    &__result{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        min-height: 150px;
+        padding: 30px 0;
+        margin-top: 20px;
+        background-color: $secondary;
+
+        &:before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 100px;
+            background-color: $white;
+        }
+    }
+
+    &__result-item{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 40px;
+        width: 50%;
+
+        @include media-xs{
+            padding: 0 15px;
+        }
+
+        .title-h3{
+            max-width: 250px;
+            overflow: hidden;
+        }
+
+        .title-h6{
+            margin-top: 15px;
+            color: $main;
+        }
+    }
+}

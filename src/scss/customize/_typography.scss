@@ -1,0 +1,173 @@
+.title-xlarge{
+    font-size: 145px;
+    font-weight: 500;
+    line-height: 1;
+
+    @include media-md{
+        font-size: 72px;
+    }
+}
+
+.title-large{
+    font-size: 105px;
+    font-weight: 500;
+    line-height: 1;
+
+    @include media-sm{
+        //font-size: 77px;
+    }
+}
+
+.styled-subtitle{
+    font-size: 25px;
+    font-weight: 200;
+    line-height: 1.3;
+
+    @include media-md{
+        font-size: 18px;
+    }
+
+    @include media-sm{
+        font-size: 16px;
+    }
+}
+
+h1, .title-h1{
+    font-size: 77px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    @include media-md{
+        font-size: 48px;
+    }
+
+    @include media-sm{
+        font-size: 36px;
+    }
+}
+
+h2, .title-h2{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    @include media-sm{
+        font-size: 32px;
+    }
+}
+
+h3, .title-h3 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    @include media-md{
+        font-size: 30px;
+    }
+
+    @include media-sm{
+        font-size: 20px;
+    }
+}
+
+h4, .title-h4 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    @include media-md{
+        font-size: 16px;
+    }
+}
+
+h5, .title-h5 {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+h6, .title-h6 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.body-small{
+    font-size: 14px;
+}
+
+.body-thin{
+    font-size: 12px;
+}
+
+.tr-uppercase{
+    text-transform: uppercase;
+}
+
+.tr-capitalize{
+    text-transform: capitalize;
+}
+
+.tx-primary {
+    color: $primary;
+}
+
+.tx-secondary {
+    color: $secondary;
+}
+
+.tx-dark {
+    color: $dark-bg;
+}
+
+.tx-white {
+    color: $white;
+}
+
+.lh-big{
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: $transition;
+}
+
+button {
+    cursor: pointer;
+    transition: $transition;
+}
+
+a:hover,
+button:hover {
+    opacity: 0.85;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.m-disable{
+    margin: 0 !important;
+}
+
+.p-disable{
+    padding: 0 !important;
+}

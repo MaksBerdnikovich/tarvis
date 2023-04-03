@@ -1,0 +1,39 @@
+.contact-form{
+  position: relative;
+  width: 100%;
+  padding: 80px 0;
+  margin-top: 110px;
+  z-index: 1;
+  background-color: $dark-bg;
+  color: $gray;
+
+  &__title {
+    position: relative;
+    margin-bottom: 40px;
+    z-index: 1;
+
+    .separate-title {
+      @include title-separator($white);
+
+      margin-bottom: 40px;
+      color: $secondary;
+
+      span{
+        @include media-sm {
+          position: static;
+          padding: 10px 0 0 0;
+        }
+
+        &:before{
+          @include media-sm {
+            top: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  &__form{
+    position: relative;
+  }
+}

@@ -1,0 +1,248 @@
+.actions{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    min-height: 840px;
+    margin-top: 130px;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+
+    @include media-sm{
+        min-height: auto;
+        margin-top: 60px;
+        flex-direction: column;
+    }
+
+    &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: calc(50% + 60px);
+        height: 100%;
+        background-color: $gray-bg;
+
+        @include media-sm{
+            display: none;
+        }
+    }
+
+    &__wrap {
+        position: relative;
+        width: 100%;
+        padding-top: 190px;
+        z-index: 1;
+
+        @include media-sm{
+            padding-top: 70px;
+        }
+    }
+
+    &__reviews{
+        position: relative;
+        max-width: 470px;
+        margin-right: auto;
+        padding-top: 90px;
+
+        @include media-mdx{
+            max-width: 440px;
+        }
+
+        @include media-mdx{
+            max-width: 330px;
+        }
+
+        @include media-sm{
+            min-width: 100vw;
+            background-color: $gray-bg;
+            padding: 40px 15px 60px 15px;
+            margin: 0 -15px;
+        }
+    }
+
+    &__reviews-title{
+        margin-bottom: 60px;
+
+        @include media-sm{
+            margin-bottom: 30px;
+        }
+
+        .separate-title {
+            @include title-separator($primary, right);
+
+            @include media-sm{
+                @include title-separator($primary, left);
+            }
+        }
+    }
+
+    &__reviews-slider{
+        position: relative;
+
+        .owl-nav{
+            right: 0;
+            bottom: 0;
+        }
+
+        .owl-prev{
+            right: 70px;
+
+            @include media-sm{
+                right: auto;
+                left: 50%;
+                margin-left: -55px;
+            }
+        }
+
+        .owl-next{
+            right: 0;
+
+            @include media-sm{
+                right: 50%;
+                margin-right: -55px;
+            }
+        }
+
+        .owl-prev:after,
+        .owl-next:after{
+            color: $main;
+        }
+    }
+
+    &__reviews-slider-item{
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        align-items: flex-end;
+
+        @include media-sm{
+            text-align: left;
+            align-items: flex-start;
+        }
+    }
+
+    &__reviews-slider-item-text{
+        padding-bottom: 70px;
+
+        @include media-sm{
+            padding-bottom: 40px;
+        }
+    }
+
+    &__reviews-slider-item-user{
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-bottom: 70px;
+
+        @include media-sm{
+            padding-bottom: 40px;
+        }
+
+        p{
+            display: flex;
+            flex-direction: column;
+            padding-right: 15px;
+        }
+
+        span{
+            font-size: 12px;
+            padding-top: 5px;
+        }
+
+        i{
+            width: 60px;
+            height: 60px;
+
+            @include media-sm{
+                order: -1;
+                margin-right: 15px;
+            }
+        }
+    }
+
+    &__news{
+        position: relative;
+        max-width: 400px;
+        margin-left: auto;
+
+        @include media-mdx{
+            max-width: 440px;
+            margin-left: 0;
+        }
+
+        @include media-md{
+            max-width: 330px;
+        }
+
+        @include media-sm{
+            min-width: 100vw;
+            background-color: $primary;
+            padding: 40px 15px;
+            margin: 0 -15px;
+        }
+    }
+
+    &__news-title{
+        position: relative;
+
+        @include media-mdx{
+            margin-top: 80px;
+        }
+
+        @include media-sm{
+            margin-top: 0;
+        }
+    }
+
+    &__news-list{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__news-item{
+        position: relative;
+        margin-top: 80px;
+        color: $white;
+
+        @include media-sm{
+            margin-top: 40px;
+        }
+
+        &:last-child{
+            @include media-mdx{
+                display: none;
+            }
+        }
+
+        h5{
+            line-height: 1.5;
+        }
+
+        .body-thin{
+            display: inline-flex;
+            color: $gray-light;
+            margin: 5px 0;
+        }
+
+        .separate-title {
+            margin-top: 30px;
+
+            @include title-separator($secondary)
+        }
+    }
+
+    &__aside {
+        @include aside-block('../images/news/ic1.png', $primary, 0px, right, left, $gray-bg);
+
+        top: 90px;
+        background-color: $primary;
+
+        @include media-sm{
+            position: relative;
+            min-width: 100%;
+        }
+    }
+}

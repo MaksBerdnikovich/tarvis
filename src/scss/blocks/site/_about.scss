@@ -1,0 +1,142 @@
+.about {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  min-height: 700px;
+  margin-top: -120px;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+
+  @include media-sm {
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  &__wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 260px;
+    z-index: 1;
+
+    @include media-sm {
+      padding-top: 220px;
+    }
+  }
+
+  &__info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    max-width: 520px;
+
+    &.fluid {
+      max-width: none;
+      padding: 80px 0;
+    }
+
+    @include media-mdx {
+      max-width: 470px;
+    }
+
+    @include media-md {
+      max-width: 370px;
+    }
+
+    @include media-sm {
+      max-width: 50%;
+      text-align: left;
+    }
+  }
+
+  &__title {
+    margin-bottom: 80px;
+
+    @include media-md {
+      margin-bottom: 40px;
+    }
+
+    .separate-title {
+      @include title-separator($primary, right);
+
+      @include media-sm {
+        @include title-separator($primary, left);
+
+        span {
+          padding: 20px 0 0 0;
+
+          &:before {
+            top: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 65px;
+
+    @include media-sm {
+      margin-top: 40px;
+    }
+  }
+
+  &__aside {
+    @include aside-block('../images/about/ic1.png', $primary);
+
+    @include media-mdx {
+      &:after {
+        width: 120px;
+      }
+    }
+  }
+
+  &.about--inner .about__wrap {
+    padding-top: 220px;
+  }
+
+  &.about--inner .about__info:not(.fluid) {
+    padding-right: 15px;
+
+    @include media-sm {
+      min-width: 100%;
+      padding: 0;
+    }
+  }
+
+  &.about--inner .about__info.fluid {
+
+    @include media-sm {
+      padding-top: 30px;
+      padding-bottom: 0;
+    }
+  }
+
+  &.about--inner .about__title {
+    margin-bottom: 40px;
+
+    .separate-title {
+      @include title-separator($primary, left);
+    }
+  }
+
+  &.about--inner .about__text {
+    text-align: left;
+
+    p + p {
+      margin-top: 30px;
+    }
+  }
+
+  &.about--inner .about__aside {
+    max-height: 720px;
+
+    @include aside-block('../images/about/ic2.png', $primary);
+
+    @include media-sm {
+      max-height: 200px;
+
+    }
+  }
+}

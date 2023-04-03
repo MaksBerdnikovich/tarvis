@@ -1,0 +1,296 @@
+.deposit-list{
+    position: relative;
+    width: 100%;
+
+    &__tabs{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    &__tabs-nav{
+        position: relative;
+
+        ul{
+            display: flex;
+        }
+
+        li{
+            width: 50%;
+            max-width: 250px;
+        }
+
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 90px;
+            background-color: transparent;
+            text-align: center;
+            text-transform: uppercase;
+
+            &.active{
+                background-color: $primary;
+                opacity: 1;
+            }
+
+            b{
+                font-size: 17px;
+                padding-top: 5px;
+
+                @include media-mdx{
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    &__tabs-body{
+        position: relative;
+        width: 100%;
+        padding: 30px 30px 90px 30px;
+        background-color: $primary;
+
+        @include media-sm{
+            padding: 20px 15px 90px 15px;
+        }
+    }
+
+    &__slider{
+        position: relative;
+
+        .owl-nav{
+            bottom: -30px;
+        }
+
+        .owl-prev{
+            left: 50%;
+            margin-left: -60px;
+        }
+
+        .owl-next{
+            right: 50%;
+            margin-right: -60px;
+        }
+    }
+
+    &__grid{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -20px;
+    }
+
+    &__grid-item{
+        position: relative;
+        padding: 0 20px;
+        width: 50%;
+        margin: 20px 0;
+
+        @include media-md{
+            width: 100%;
+        }
+    }
+
+    &__grid-wrap{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__upto {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        min-height: 180px;
+        padding: 40px 20px 40px 150px;
+
+        background-image: url("../images/db/3.jpg");
+        background-position: center center;
+        background-size: cover;
+
+        @include media-mdx{
+            flex-wrap: wrap;
+        }
+
+        i {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 120px;
+            background-color: $white;
+
+            img {
+                width: 90px;
+            }
+        }
+
+        .title-xlarge{
+            height: 100px;
+            line-height: 90px;
+            margin-right: 10px;
+
+            @include media-md{
+                height: auto;
+                font-size: 80px;
+                line-height: 60px;
+            }
+        }
+
+        .title-h5 {
+            display: inline-flex;
+            padding-top: 10px;
+            color: $secondary;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 1.5px;
+
+            @include media-md{
+                font-size: 14px;
+            }
+        }
+    }
+
+    &__plan{
+        position: relative;
+        padding: 30px 40px 25px 30px;
+        min-height: 270px;
+        background-color: $gray-bg;
+        color: $main;
+
+        @include media-lgx{
+            padding: 25px 20px;
+        }
+    }
+
+    &__plan-wrap{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__plan-item{
+        position: relative;
+        margin-bottom: 30px;
+
+        @include media-xs{
+            width: 100%;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            list-style-type: square;
+            padding-left: 16px;
+            font-size: 13px;
+        }
+
+        li {
+            margin: 0;
+            color: $primary;
+            font-size: 13px;
+
+            &:nth-child(3) {
+                margin-top: 10px;
+            }
+
+            &:nth-child(4) {
+                margin-bottom: 10px;
+            }
+
+            span {
+                color: $main;
+            }
+
+            b{
+                font-weight: 700;
+            }
+
+            h4{
+                display: inline-flex;
+            }
+
+            .title-h3{
+                display: inline-flex;
+                padding-top: 10px;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: $primary;
+            }
+        }
+
+        .btn{
+            min-width: 220px;
+            padding: 0 15px;
+
+            @include media-xs{
+                width: 100%;
+            }
+        }
+
+        &:last-child{
+            max-width: 220px;
+
+            @include media-xs{
+                max-width: none;
+            }
+
+            ul{
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &__progress{
+        position: relative;
+        width: 100%;
+        height: 55px;
+        padding: 2px;
+        background-color: $styled;
+    }
+
+    &__progress-bar{
+        position: relative;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 20px;
+        background-image: url("../images/db/5.jpg");
+        background-repeat: no-repeat;
+        background-position: left center;
+    }
+
+    &__progress-val{
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        font-weight: 500;
+        color: $secondary;
+    }
+
+    &__grid-item.grid-item--closed .deposit-list__upto {
+        background-image: url("../images/db/4.jpg");
+    }
+
+    &__grid-item.grid-item--closed .deposit-list__progress-val {
+        color: $main;
+    }
+}

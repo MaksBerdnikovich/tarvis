@@ -1,0 +1,113 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.preloader:before {
+    content: "";
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    background: $main;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    transition: 0.72s ease transform 0.16s;
+}
+
+.preloader:after {
+    content: "";
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    background: $main;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    transition: 0.72s ease transform 0.16s;
+}
+
+body[data-loading="false"] .preloader {
+    visibility: hidden;
+    transition: 0.01s visibility 0.88s;
+}
+
+body[data-loading="false"] .preloader:before {
+    transform: translateX(-100%);
+}
+
+body[data-loading="false"] .preloader:after {
+    transform: translateX(100%);
+}
+
+.preloader-icon {
+    width: 52px;
+    height: 52px;
+    z-index: 3;
+    transition: 0.16s ease opacity;
+}
+
+body[data-loading="false"] #g1 line {
+    animation-play-state: paused;
+}
+
+body[data-loading="false"] #g2 line {
+    animation-play-state: paused;
+}
+
+body[data-loading="false"] .preloader-icon {
+    animation-play-state: paused;
+    opacity: 0;
+}
+
+.preloader-icon line {
+    stroke-dasharray: 40px;
+    stroke-dashoffset: 40px;
+}
+
+#g1 line {
+    animation: 2s animateLoader infinite;
+}
+
+#g2 line {
+    animation: 2s animateLoader infinite 1s;
+}
+
+.preloader-icon {
+    animation: 4s rotate infinite;
+}
+
+@keyframes animateLoader {
+    0% {
+        stroke-dashoffset: 40px;
+        stroke-dasharray: 40px;
+    }
+    50% {
+        stroke-dashoffset: 0px;
+        stroke-dasharray: 40px;
+    }
+    100% {
+        stroke-dashoffset: 80px;
+        stroke-dasharray: 40px;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+    50% {
+        transform: rotate(90deg)
+    }
+    100% {
+        transform: rotate(180deg)
+    }
+}

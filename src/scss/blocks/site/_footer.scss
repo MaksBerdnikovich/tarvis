@@ -1,0 +1,404 @@
+.footer {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.footer-contact {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 700px;
+
+  @include media-sm {
+    min-height: auto;
+  }
+
+  &__wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 240px;
+    z-index: 1;
+
+    @include media-md {
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+
+    @include media-sm {
+      padding-top: 40px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 470px;
+
+    @include media-mdx {
+      max-width: 440px;
+    }
+
+    @include media-md {
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    margin-bottom: 80px;
+
+    @include media-sm {
+      margin-bottom: 40px;
+    }
+
+    .separate-title {
+      @include title-separator($primary, right);
+
+      @include media-md {
+        text-align: center;
+      }
+
+      @include media-sm {
+        text-align: left;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex: 1 1 0;
+    flex-wrap: wrap;
+    margin: 0 -25px;
+
+    @include media-xs {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    padding: 0 25px;
+    margin-bottom: 40px;
+    text-align: right;
+
+    @include media-md {
+      text-align: left;
+    }
+
+    @include media-xs {
+      width: 100% !important;
+    }
+
+    &:nth-child(even) {
+      width: 45%;
+    }
+
+    h6 {
+      margin-bottom: 10px;
+    }
+
+    strong {
+      font-size: 23px;
+      font-weight: 300;
+    }
+
+    a {
+      color: $secondary;
+      text-decoration: underline;
+      line-height: 1.5;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: 0 -5px;
+
+    @include media-xs {
+      justify-content: flex-start;
+    }
+
+    li {
+      padding: 10px 5px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      background-color: $primary;
+      color: $white;
+      font-size: 16px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    li:nth-child(n+3) a {
+      font-size: 12px;
+    }
+  }
+
+  &__maps {
+    z-index: 2 !important;
+
+    @include aside-block('../images/contact/ic1.png', $secondary, 110px);
+
+    @include media-md {
+      position: relative;
+      height: 250px;
+      width: 100%;
+      overflow-y: visible !important;
+
+      &:after, &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.footer-colophon {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $dark-bg;
+  min-height: 80px;
+
+  @include media-sm {
+    align-items: flex-start;
+  }
+
+  &__logo {
+    position: relative;
+    margin-right: 30px;
+
+    @include media-lgx {
+      order: 3;
+    }
+
+    @include media-sm {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+      width: 80px;
+    }
+
+    span {
+      display: inline-flex;
+      margin-left: 10px;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $white;
+    }
+  }
+
+  &__copy {
+    position: relative;
+    margin-left: auto;
+    color: $gray;
+
+    @include media-lgx {
+      order: 1;
+      margin-left: 0;
+      margin-right: auto;
+      padding-left: 15px;
+    }
+
+    @include media-mdx {
+      display: inline-flex;
+      flex-direction: column;
+    }
+
+    @include media-sm {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    p {
+      margin: 5px 0;
+
+      @include media-mdx {
+        display: inline-flex;
+        flex-direction: column;
+        margin: 0;
+      }
+    }
+
+    span {
+      color: $secondary;
+    }
+  }
+
+  &__nav {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-left: 100px;
+    z-index: 1;
+
+    @include media-lgx {
+      order: 2;
+      margin-left: auto;
+      width: calc(100% - 330px);
+    }
+
+    @include media-mdx {
+      width: calc(100% - 180px);
+    }
+
+    @include media-sm {
+      order: 1;
+      margin-left: auto;
+      width: 40%;
+      justify-content: flex-start;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+
+    @include media-md {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    @include media-sm {
+      flex-direction: column;
+      padding: 20px 0;
+    }
+  }
+
+  &__nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+    padding: 5px 30px;
+
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 500;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include media-lg {
+      padding: 0 15px;
+    }
+
+    @include media-md {
+      min-height: 40px;
+    }
+
+    @include media-sm {
+      text-align: left;
+      justify-content: flex-start;
+      min-height: auto;
+      padding: 3px 0;
+    }
+
+    &:hover {
+      opacity: 1;
+      color: $secondary;
+    }
+
+    &.active {
+      color: $secondary;
+      opacity: 1;
+
+      @include media-md {
+        background-color: transparent;
+      }
+    }
+
+    &.nav-item--agreements {
+      padding: 0 70px;
+      background-color: $primary;
+
+      @include media-md {
+        min-height: 80px;
+      }
+
+      @include media-sm {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: auto;
+      }
+
+      @include media-xs {
+        padding: 0 40px;
+      }
+
+      &:hover {
+        opacity: 0.85;
+        color: $white;
+      }
+    }
+  }
+
+  &__agree {
+    @include media-lgx {
+      order: 4;
+      margin-left: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

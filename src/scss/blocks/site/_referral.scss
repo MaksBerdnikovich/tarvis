@@ -1,0 +1,189 @@
+.referral {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 790px;
+  z-index: 1;
+  overflow: hidden;
+
+  @include media-sm {
+    min-height: auto;
+    margin-bottom: -70px;
+  }
+
+  &__wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 110px;
+    z-index: 1;
+  }
+
+  &__info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 565px;
+
+    @include media-mdx {
+      max-width: 470px;
+    }
+
+    @include media-md {
+      max-width: 370px;
+    }
+
+    @include media-sm {
+      padding-top: 40px;
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    color: $primary;
+
+    .separate-title{
+      @include title-separator($secondary, left, 0);
+
+      display: flex;
+      flex-direction: column;
+
+      span{
+        margin-top: 15px;
+        padding: 5px 0 0 0;
+      }
+
+    }
+  }
+
+  &__text{
+    position: relative;
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+
+  &__level{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__level-item{
+    position: relative;
+    display: flex;
+    min-height: 90px;
+    color: $white;
+
+    & + &{
+      margin-top: 10px;
+    }
+  }
+
+  &__level-item-title{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 90px;
+    padding-top: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: $primary;
+    z-index: 2;
+
+    @include triangle-right($primary, 8px);
+
+    b{
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    strong{
+      font-size: 38px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: $primary;
+      text-shadow: $shadow-text;
+    }
+  }
+
+  &__level-item-step{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    flex: 1 1 0;
+    background-color: $primary-light;
+    z-index: 1;
+
+    @include media-md{
+      padding: 0 15px;
+    }
+
+    @include triangle-right($primary-light, 8px);
+
+    .title-h4{
+      font-size: 24px;
+      font-weight: 700;
+
+      @include media-sm{
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__level-item-sum{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+    background-color: $primary-lighter;
+    z-index: 0;
+
+    @include media-md{
+      padding: 0 15px;
+    }
+
+    .title-h4{
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: none;
+
+      @include media-sm{
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 50px;
+
+    @include media-sm {
+      margin-top: 40px;
+    }
+  }
+
+  &__aside {
+    @include aside-block('../images/referral/ic1.png', $primary, 120px);
+
+    @include media-mdx{
+      &:after{
+        width: 120px;
+      }
+    }
+
+    @include media-sm{
+      width: 100%;
+      background-image: none !important;
+
+      &:before{
+        top: 0;
+      }
+    }
+  }
+}

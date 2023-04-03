@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tarvis</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="dist/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="dist/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:title" content="Tarvis">
+    <meta property="og:site_name" content="Tarvis">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <link rel="stylesheet" href="dist/css/style.min.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body class="template template--registration">
+
+<header class="header">
+    <div class="header-logo">
+        <a href="/"><img src="dist/images/logo.png" alt="logo"> <span>tarvis</span></a>
+    </div>
+    <div class="header-lang">
+        <a href="#"><img src="dist/images/flag.png" alt="language"></a>
+    </div>
+</header>
+
+<main class="main-content">
+
+    <div class="wrapper">
+
+        <section class="registration">
+            <div class="hero-socials">
+                <ul>
+                    <li><a href="#"><i class="icon-fb"></i></a></li>
+                    <li><a href="#"><i class="icon-ins"></i></a></li>
+                    <li><a href="#"><i class="icon-tw"></i></a></li>
+                    <li><a href="#"><i class="icon-yo"></i></a></li>
+                </ul>
+            </div>
+            <div class="registration__wrap">
+                <div class="registration__signin">
+                    <form id="signinForm" class="registration__signin-form" action="?">
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="registration__signin-title">
+                                    <b class="title-h2 tx-primary">Вход</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="input-group">
+                                    <label>Логин:</label>
+                                    <input type="text" name="login" required>
+                                </div>
+                                <div class="error-msg">Enter valid login</div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="input-group">
+                                    <label>Пароль:</label>
+                                    <input type="password" name="password" required>
+                                </div>
+                                <div class="error-msg">Enter valid password</div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="input-group captcha">
+                                    <label>Код с картинки:</label>
+                                    <div class="captcha">
+                                        <input type="text" name="captcha" required>
+                                        <i><img src="dist/images/captcha.jpg" alt="captcha" /></i>
+                                    </div>
+                                </div>
+                                <div class="error-msg">Enter valid captcha</div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="btn-group">
+                                    <button type="submit" class="btn btn-primary">Войти</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="btn-group">
+                                    <a href="#">Забыли пароль?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="registration__signup">
+                    <form id="signupForm" class="registration__signup-form" action="?">
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="registration__signup-title">
+                                    <b class="title-h2 tx-secondary">Регистрация</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="input-group">
+                                    <label>Имя:</label>
+                                    <input type="text" name="name" required>
+                                </div>
+                                <div class="error-msg">Enter valid name</div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="input-group">
+                                    <label>Фамилия:</label>
+                                    <input type="text" name="surname" required>
+                                </div>
+                                <div class="error-msg">Enter valid surname</div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="input-group">
+                                    <label>E-mail:</label>
+                                    <input type="text" name="email" required>
+                                </div>
+                                <div class="error-msg">Enter valid email</div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="input-group">
+                                    <label>Придумайте пароль:</label>
+                                    <input type="password" name="password" required>
+                                </div>
+                                <div class="error-msg">Enter valid password</div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="input-group">
+                                    <label>Повторите пароль:</label>
+                                    <input type="password" name="password_repeat" required>
+                                </div>
+                                <div class="error-msg">Enter valid password</div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="input-group">
+                                    <label>Вас пригласил:</label>
+                                    <input type="text" name="invites" required>
+                                </div>
+                                <div class="error-msg">Enter valid invites</div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="input-group captcha">
+                                    <label>Код с картинки:</label>
+                                    <div class="captcha">
+                                        <input type="text" name="captcha" required>
+                                        <i><img src="dist/images/captcha.jpg" alt="captcha" /></i>
+                                    </div>
+                                </div>
+                                <div class="error-msg">Enter valid captcha</div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="checkbox-group">
+                                    <label class="checkbox-group__handle">
+                                        <input type="checkbox" name="agrees">
+                                        <span class="checkbox-group__marker"></span>
+                                        <span class="checkbox-group__label">
+                                            Согласен с <a href="#">правилами и соглашениями</a>,
+                                            а также с возможными рисками.
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col form-col--100">
+                            <div class="form-line">
+                                <div class="btn-group">
+                                    <button type="submit" class="btn btn-secondary">Зарегистрироваться</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="hero-courses">
+                <ul>
+                    <li><i class="icon-btc"></i><span>BTC | USD</span><b>$38,647.77</b></li>
+                    <li><i class="icon-eth"></i><span>ETH | USD</span><b>$38,647.77</b></li>
+                    <li><i class="icon-ltc"></i><span>LTC | USD</span><b>$38,647.77</b></li>
+                    <li><i class="icon-trc"></i><span>USDT | USD</span><b>$38,647.77</b></li>
+                    <li><i class="icon-xrp"></i><span>XRP | USD</span><b>$38,647.77</b></li>
+                    <li><i class="icon-bnb"></i><span>BNB | USD</span><b>$38,647.77</b></li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
+<script src="dist/js/scripts.min.js"></script>
+<script src="dist/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+.owl-nav,
+.carousel__nav{
+    position: absolute;
+    width: 100%;
+}
+
+.owl-prev,
+.carousel__button.is-prev{
+    position: absolute;
+    width: 40px;
+    left: auto;
+    right: auto;
+
+    span, svg{
+        display: none;
+    }
+
+    &:after{
+        content: "\e916";
+        font-family: 'icons';
+        font-size: 12px;
+        color: $white;
+    }
+
+    &.disabled{
+        opacity: 0.5;
+    }
+}
+
+.owl-next,
+.carousel__button.is-next{
+    position: absolute;
+    width: 40px;
+    left: auto;
+    right: auto;
+
+    span, svg{
+        display: none;
+    }
+
+    &:after{
+        content: "\e917";
+        font-family: 'icons';
+        font-size: 12px;
+        color: $white;
+    }
+
+    &.disabled{
+        opacity: 0.7;
+    }
+}

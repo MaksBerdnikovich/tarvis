@@ -1,0 +1,63 @@
+.switcher {
+    position: relative;
+    display: inline-flex;
+    width: 100px;
+    height: 50px;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+.switch-handle {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0c1b41;
+    border-radius: 9px;
+    overflow: hidden;
+    transition: .3s;
+    cursor: pointer;
+
+    b{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1;
+        color: #8393bd;
+    }
+}
+
+.switch-handle:before {
+    content: "$";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    top: 0;
+    background-color: #01a9e0;
+
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1;
+    color: #ffffff;
+    transition: .3s;
+}
+
+.switcher input:checked + .switch-handle:before {
+    content: "₽";
+    transform: translateX(100%);
+}

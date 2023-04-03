@@ -1,0 +1,38 @@
+.footer {
+    display: none;
+    position: relative;
+    margin-top: auto;
+    width: 100%;
+
+    @include media-lgx {
+        display: block;
+    }
+
+    &__socials {
+        position: relative;
+        background-color: $dark-bg;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            margin: 0 -20px;
+        }
+
+        li {
+            padding: 0 20px;
+
+            &:nth-child(n + 3) a{
+                font-size: 18px;
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            min-height: 50px;
+            line-height: 1;
+            font-size: 20px;
+            color: $white
+        }
+    }
+}

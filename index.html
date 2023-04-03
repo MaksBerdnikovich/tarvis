@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tarvis</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="dist/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="dist/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:title" content="Tarvis">
+    <meta property="og:site_name" content="Tarvis">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <link rel="stylesheet" href="dist/css/style.min.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body class="template">
+
+<!--Preloader Start -->
+<div class="page-preloader">
+    <div class="preloader-wrap">
+        <div class="preloader-logo"><img src="dist/images/logo.svg" alt="logo"><span>TARVIS</span></div>
+        <div class="progress-bar-title">Загрузка...</div>
+        <div class="progress-bar" id="progress-bar">
+            <div class="progress-bar-val" id="progress-bar-val">100%</div>
+            <div class="progress-bar-status" id="progress-bar-status"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .page-preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("dist/images/load/bg.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        z-index: 10000;
+    }
+
+    .preloader-wrap {
+        position: absolute;
+        width: 100%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .preloader-logo {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .preloader-logo img {
+        max-width: 215px;
+    }
+
+    .preloader-logo span {
+        margin-top: 30px;
+        font-size: 50px;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 1;
+        color: #FFFFFF;
+    }
+
+    .progress-bar-title {
+        margin-top: 50px;
+        font-size: 48px;
+        font-weight: 700;
+        color: #FFFFFF;
+    }
+
+    .progress-bar {
+        position: relative;
+        width: 100%;
+        max-width: 570px;
+        height: 55px;
+        margin-top: 20px;
+        padding: 2px;
+        background-color: #141828;
+    }
+
+    .progress-bar-val {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        z-index: 5;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #deb144;
+        font-weight: 500;
+    }
+
+    .progress-bar-status {
+        position: relative;
+        height: 100%;
+        background-image: url('dist/images/load/pb.jpg');
+        background-repeat: no-repeat;
+        background-position: left center;
+    }
+</style>
+
+<script>
+    const progressBar = document.getElementById("progress-bar");
+    const progressText = document.getElementById("progress-bar-val");
+    const statusBar = document.getElementById("progress-bar-status");
+    let progressStatus = 0;
+    let id = null;
+
+    id = setInterval(updateProgressBar, 10);
+
+    function updateProgressBar() {
+        if (progressStatus === 100) { return clearInterval(id); }
+
+        progressStatus++;
+        progressText.textContent = progressStatus + "%";
+        statusBar.style.width = progressStatus + "%";
+        if (progressStatus > 80) progressText.style.color = '#141828';
+    }
+
+    window.addEventListener('load', () => {
+        const preloader = document.querySelector('.page-preloader')
+        setTimeout(() => preloader.remove(), 2000)
+    })
+</script>
+<!--Preloader End -->
+
+
+<header class="header" data-header-fixed>
+    <div class="header-logo">
+        <a href="/"><img src="dist/images/logo.png" alt="logo"> <span>tarvis</span></a>
+    </div>
+    <div class="header-nav-toggle" data-menu-toggle>
+        <span class="line-1"></span>
+        <span class="line-2"></span>
+        <span class="line-3"></span>
+    </div>
+    <nav class="header-nav" data-menu-nav>
+        <ul class="header-nav__list">
+            <li><a href="about.html" class="header-nav__item">О компании</a></li>
+            <li><a href="partners.html" class="header-nav__item">Инвесторы и партнеры</a></li>
+            <li><a href="faq.html" class="header-nav__item">FAQ</a></li>
+            <li><a href="agreements.html" class="header-nav__item">Соглашения</a></li>
+            <li><a href="contacts.html" class="header-nav__item">Контакты</a></li>
+        </ul>
+    </nav>
+    <div class="header-cabinet">
+        <a href="dashboard.html" class="header-nav__item cabinet">кабинет</a>
+    </div>
+    <div class="header-lang"><a href="#"><img src="dist/images/flag.png" alt="language"></a></div>
+</header>
+
+<main class="main-content">
+
+    <div class="wrapper">
+
+        <section class="hero">
+            <div class="hero-socials">
+                <ul>
+                    <li><a href="#"><i class="icon-fb"></i></a></li>
+                    <li><a href="#"><i class="icon-ins"></i></a></li>
+                    <li><a href="#"><i class="icon-tw"></i></a></li>
+                    <li><a href="#"><i class="icon-yo"></i></a></li>
+                </ul>
+            </div>
+            <div class="hero-slider owl-carousel" data-hero-slider>
+                <div class="hero-slider__item item" style="background-image: url('dist/images/hero/1.jpg')">
+                    <div class="container">
+                        <div class="hero-slider__text">
+                            <h1>Индивидуальные взаимоотношения с инвесторами!</h1>
+                            <h4 class="separate-title">
+                                <span>Многолетний и успешный опыт в области трейдинга и чистой энергии!</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-slider__item item" style="background-image: url('dist/images/hero/2.jpg')">
+                    <div class="container">
+                        <div class="hero-slider__text">
+                            <h1>Индивидуальные взаимоотношения с инвесторами!</h1>
+                            <h4 class="separate-title">
+                                <span>Многолетний и успешный опыт в области трейдинга и чистой энергии!</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-slider__item item" style="background-image: url('dist/images/hero/3.jpg')">
+                    <div class="container">
+                        <div class="hero-slider__text">
+                            <h1>Индивидуальные взаимоотношения с инвесторами!</h1>
+                            <h4 class="separate-title">
+                                <span>Многолетний и успешный опыт в области трейдинга и чистой энергии!</span>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-courses">
+                <ul>
+                    <li><i class="icon-btc"></i><span>BTC | USD</span><b>$38,647.77</b></li>
+                    <li><i class="icon-eth"></i><span>ETH | USD</span><b>$38,647.77</b></li>
+                    <li><i class="icon-ltc"></i><span>LTC | USD</span><b>$38,647.77</b></li>
+                    <li><i class="icon-trc"></i><span>USDT | USD</span><b>$38,647.77</b></li>
+                    <li><i class="icon-xrp"></i><span>XRP | USD</span><b>$38,647.77</b></li>
+                    <li><i class="icon-bnb"></i><span>BNB | USD</span><b>$38,647.77</b></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="about__wrap">
+                <div class="container">
+                    <div class="about__info">
+                        <div class="about__title">
+                            <h5 class="separate-title"><span>о компании Gold unicorn LTD</span></h5>
+                        </div>
+                        <div class="about__text">
+                            <p class="styled-subtitle">
+                                Gold Unicorn имеет многолетний и успешный опыт в области привлечения капитала как в
+                                форме трейдинга, так и чистой энергии.
+                            </p>
+                        </div>
+                        <div class="about__btn">
+                            <a href="#" class="btn btn-secondary">подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about__aside" style="background-image: url('dist/images/about/1.jpg')"></div>
+        </section>
+
+        <section class="trading">
+            <div class="container">
+                <div class="trading__title">
+                    <h2 class="separate-title">Трейдинг <span>Чистая энергия</span></h2>
+                </div>
+
+                <div class="trading__block">
+                    <div class="trading__upto">
+                        <span class="title-xlarge">2%</span>
+                        <span class="title-h5">daily upto to 250%</span>
+                    </div>
+                    <div class="trading__plan">
+                        <div class="trading__plan-title">
+                            <span class="title-large">Plan</span>
+                        </div>
+                        <div class="trading__plan-icon">
+                            <img src="dist/images/trading/ic1.png" alt="trading">
+                        </div>
+                        <div class="trading__plan-list">
+                            <div class="trading__plan-item">
+                                <p>Мин. сумма инвестиций: <b class="title-h4 tx-secondary">1000$</b></p>
+                                <ul>
+                                    <li><span>Начисление регулярно</span></li>
+                                    <li><span>Выходные отсутствуют</span></li>
+                                    <li><span>Депозит входит в каждое начисление</span></li>
+                                </ul>
+                            </div>
+                            <div class="trading__plan-item">
+                                <h5>2% daily upto to 250% <br/>daily increase 0.050%</h5>
+                                <a href="#" class="btn btn-primary">Инвестировать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="calc">
+            <div class="calc__wrap">
+                <div class="container">
+                    <div class="calc__block">
+                        <div class="calc__box">
+                            <div class="calc__title">
+                                <h5 class="separate-title"><span>калькулятор прибыли</span></h5>
+                            </div>
+                            <form id="calcForm" class="calc__form" action="?">
+                                <div class="calc__form-upto">
+                                    <div class="title-large">2%</div>
+                                    <div class="title-h5">
+                                        <span class="tx-white">daily</span>
+                                        <span class="tx-secondary">upto to 250% daily<br/>increase 0.050%</span>
+                                    </div>
+                                </div>
+                                <div class="calc__form-curr">
+                                    <span class="tx-white">Выберите валюту:</span>
+                                    <ul class="calc__form-group">
+                                        <li class="calc__form-group-item">
+                                            <input id="curr-1" type="radio" name="currency" value="BTC" data-currency>
+                                            <label for="curr-1"><i class="icon-btc"></i></label>
+                                        </li>
+                                        <li class="calc__form-group-item">
+                                            <input id="curr-2" type="radio" name="currency" value="ETH" data-currency>
+                                            <label for="curr-2"><i class="icon-eth"></i></label>
+                                        </li>
+                                        <li class="calc__form-group-item">
+                                            <input id="curr-3" type="radio" name="currency" value="LTC" data-currency>
+                                            <label for="curr-3"><i class="icon-ltc"></i></label>
+                                        </li>
+                                        <li class="calc__form-group-item">
+                                            <input id="curr-4" type="radio" name="currency" value="TRC" data-currency>
+                                            <label for="curr-4"><i class="icon-trc"></i></label>
+                                        </li>
+                                        <li class="calc__form-group-item">
+                                            <input id="curr-5" type="radio" name="currency" value="XRP" data-currency>
+                                            <label for="curr-5"><i class="icon-xrp"></i></label>
+                                        </li>
+                                        <li class="calc__form-group-item">
+                                            <input id="curr-6" type="radio" name="currency" value="BNB" data-currency>
+                                            <label for="curr-6"><i class="icon-bnb"></i></label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="calc__form-sum">
+                                    <label class="tx-white">Введите сумму:</label>
+                                    <input type="number" placeholder="250.00" data-amount/>
+                                    <span class="error-text">Enter correct data!</span>
+                                </div>
+                                <div class="calc__form-btn">
+                                    <button type="submit" class="btn btn-secondary">инвестировать</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="calc__box">
+                            <div class="calc__result">
+                                <div class="calc__result-item">
+                                    <div class="icon"><img src="dist/images/calc/ic2.png" alt="profit"></div>
+                                    <div class="title-h2 tx-primary" data-daily-profit>3024.80$</div>
+                                    <div class="title-h6">Доходность за период</div>
+                                </div>
+                                <div class="calc__result-item">
+                                    <div class="icon"><img src="dist/images/calc/ic3.png" alt="profit"></div>
+                                    <div class="title-h2 tx-primary" data-total-profit>3024.80$</div>
+                                    <div class="title-h6">Общая доходность</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc__aside" style="background-image: url('dist/images/calc/1.jpg')"></div>
+        </section>
+
+        <section class="experience experience--start">
+            <div class="experience__wrap">
+                <div class="container">
+                    <div class="experience__info">
+                        <div class="experience__title">
+                            <h5 class="separate-title"><span>01. трейдинг</span></h5>
+                        </div>
+                        <div class="experience__text">
+                            <p class="styled-subtitle">
+                                Gold Unicorn имеет успешный опыт в области привлечения капитала в форме трейдинга:
+                            </p>
+                        </div>
+                        <div class="experience__list">
+                            <ul>
+                                <li>Есть много вариантов Lorem Ipsum</li>
+                                <li>Большинство из них имеет не всегда</li>
+                                <li>Приемлемые модификации</li>
+                                <li>Многие программы электронной вёрстки</li>
+                                <li>Lorem Ipsum в качестве текста по умолчанию</li>
+                                <li>Много веб-страниц всё ещё дожидаются</li>
+                            </ul>
+                        </div>
+                        <div class="experience__btn">
+                            <a href="#" class="btn btn-secondary">подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience__aside" style="background-image: url('dist/images/trading/2.jpg')"></div>
+        </section>
+
+        <section class="experience experience--end">
+            <div class="experience__wrap">
+                <div class="container">
+                    <div class="experience__info">
+                        <div class="experience__title">
+                            <h5 class="separate-title"><span>02. майнинг</span></h5>
+                        </div>
+                        <div class="experience__text">
+                            <p class="styled-subtitle">
+                                Gold Unicorn имеет успешный опыт в области привлечения капитала в форме чистой энергии:
+                            </p>
+                        </div>
+                        <div class="experience__list">
+                            <ul>
+                                <li>Есть много вариантов Lorem Ipsum</li>
+                                <li>Большинство из них имеет не всегда</li>
+                                <li>Приемлемые модификации</li>
+                                <li>Многие программы электронной вёрстки</li>
+                                <li>Lorem Ipsum в качестве текста по умолчанию</li>
+                                <li>Много веб-страниц всё ещё дожидаются</li>
+                            </ul>
+                        </div>
+                        <div class="experience__btn">
+                            <a href="#" class="btn btn-primary">подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience__aside" style="background-image: url('dist/images/trading/3.jpg')"></div>
+        </section>
+
+        <section class="result">
+            <div class="result__start" style="background-image: url('dist/images/result/1.jpg')">
+                <div class="result__title tx-white">
+                    <h2>Работаем<br/> на результат</h2>
+                </div>
+                <div class="result__subtitle">
+                    <a href="#" class="separate-title title-h5"><span>подробнее</span></a>
+                </div>
+            </div>
+            <div class="result__carousel" data-result-carousel>
+                <div class="result__carousel-item carousel__slide">
+                    <i><img src="dist/images/result/2.jpg" alt="result"></i>
+                    <b class="title-h5">амбициозные цели</b>
+                </div>
+                <div class="result__carousel-item carousel__slide">
+                    <i><img src="dist/images/result/3.jpg" alt="result"></i>
+                    <b class="title-h5">дорожим своей репутацией</b>
+                </div>
+                <div class="result__carousel-item carousel__slide">
+                    <i><img src="dist/images/result/4.jpg" alt="result"></i>
+                    <b class="title-h5">доверительные отношения</b>
+                </div>
+                <div class="result__carousel-item carousel__slide">
+                    <i><img src="dist/images/result/5.jpg" alt="result"></i>
+                    <b class="title-h5">Технологичный подход</b>
+                </div>
+                <div class="result__carousel-item carousel__slide">
+                    <i><img src="dist/images/result/6.jpg" alt="result"></i>
+                    <b class="title-h5">свежие взгляды и идеи</b>
+                </div>
+            </div>
+        </section>
+
+        <section class="roadmap">
+            <div class="roadmap__title"><h2>Дорожная карта</h2></div>
+
+            <div class="roadmap__wrap">
+                <div class="roadmap__start-year"><span class="title-h2">2022</span></div>
+                <div class="roadmap__carousel" data-roadmap-carousel>
+                    <div class="roadmap__carousel-item carousel__slide">
+                        <div class="roadmap__carousel-month month--first">
+                            <b class="title-h6">янв 2022</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-month month--second">
+                            <b class="title-h6">фев 2022</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-month month--last">
+                            <b class="title-h6">мар 2022</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-period">
+                            <ul>
+                                <li>Янв 2022</li>
+                                <li>фев 2022</li>
+                                <li>мар 2022</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap__carousel-item carousel__slide invert">
+                        <div class="roadmap__carousel-month month--first">
+                            <b class="title-h6">апр 2022</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-month month--second">
+                            <b class="title-h6">май 2022</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-month month--last">
+                            <b class="title-h6">июн 2022</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-period">
+                            <ul>
+                                <li>апр 2022</li>
+                                <li>май 2022</li>
+                                <li>июн 2022</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap__carousel-item carousel__slide">
+                        <div class="roadmap__carousel-month month--first">
+                            <b class="title-h6">июл 2022</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-month month--second">
+                            <b class="title-h6">авг 2022</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-month month--last">
+                            <b class="title-h6">сен 2022</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-period">
+                            <ul>
+                                <li>июл 2022</li>
+                                <li>авг 2022</li>
+                                <li>сен 2022</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap__carousel-item carousel__slide invert">
+                        <div class="roadmap__carousel-month month--first">
+                            <b class="title-h6">окт 2022</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-month month--second">
+                            <b class="title-h6">ноя 2022</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-month month--last">
+                            <b class="title-h6">дек 2022</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-period">
+                            <ul>
+                                <li>окт 2022</li>
+                                <li>ноя 2022</li>
+                                <li>дек 2022</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap__carousel-item carousel__slide">
+                        <div class="roadmap__carousel-month month--first">
+                            <b class="title-h6">янв 2023</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-month month--second">
+                            <b class="title-h6">фев 2023</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-month month--last">
+                            <b class="title-h6">мар 2023</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-period">
+                            <ul>
+                                <li>Янв 2023</li>
+                                <li>фев 2023</li>
+                                <li>мар 2023</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="roadmap__carousel-item carousel__slide invert">
+                        <div class="roadmap__carousel-month month--first">
+                            <b class="title-h6">апр 2023</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-month month--second">
+                            <b class="title-h6">май 2023</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-month month--last">
+                            <b class="title-h6">июн 2023</b>
+                            <p>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию.</p>
+                        </div>
+                        <div class="roadmap__carousel-period">
+                            <ul>
+                                <li>апр 2022</li>
+                                <li>май 2022</li>
+                                <li>июн 2022</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="roadmap__end-year"><span class="title-h2">2023</span></div>
+            </div>
+        </section>
+
+        <section class="actions">
+            <div class="actions__wrap">
+                <div class="container d-flex">
+                    <div class="actions__reviews">
+                        <div class="actions__reviews-title">
+                            <h5 class="separate-title"><span>отзывы клиентов</span></h5>
+                        </div>
+                        <div class="actions__reviews-slider owl-carousel" data-reviews-slider>
+                            <div class="actions__reviews-slider-item item">
+                                <div class="actions__reviews-slider-item-text">
+                                    <p>
+                                        Солнечная электроэнергетика для нас — приоритетное направление. Мы долго
+                                        присматривались и анализировали возможные варианты входа на этот рынок. Хотелось
+                                        бы отдельно отметить компетентность компании в сфере альтернативной энергетики.
+                                        Надеемся на дальнейшее плодотворное сотрудничество.
+                                    </p>
+                                </div>
+                                <div class="actions__reviews-slider-item-user">
+                                    <p>
+                                        <b class="title-h5 tx-secondary">Mark F.</b>
+                                        <span>17 Февраля 2022</span>
+                                    </p>
+                                    <i><img src="dist/images/news/ava.jpg" alt="avatar"></i>
+                                </div>
+                            </div>
+                            <div class="actions__reviews-slider-item item">
+                                <div class="actions__reviews-slider-item-text">
+                                    <p>
+                                        Солнечная электроэнергетика для нас — приоритетное направление. Мы долго
+                                        присматривались и анализировали возможные варианты входа на этот рынок. Хотелось
+                                        бы отдельно отметить компетентность компании в сфере альтернативной энергетики.
+                                        Надеемся на дальнейшее плодотворное сотрудничество.
+                                    </p>
+                                </div>
+                                <div class="actions__reviews-slider-item-user">
+                                    <p>
+                                        <b class="title-h5 tx-secondary">Alex F.</b>
+                                        <span>17 Февраля 2022</span>
+                                    </p>
+                                    <i><img src="dist/images/news/ava.jpg" alt="avatar"></i>
+                                </div>
+                            </div>
+                            <div class="actions__reviews-slider-item item">
+                                <div class="actions__reviews-slider-item-text">
+                                    <p>
+                                        Солнечная электроэнергетика для нас — приоритетное направление. Мы долго
+                                        присматривались и анализировали возможные варианты входа на этот рынок. Хотелось
+                                        бы отдельно отметить компетентность компании в сфере альтернативной энергетики.
+                                        Надеемся на дальнейшее плодотворное сотрудничество.
+                                    </p>
+                                </div>
+                                <div class="actions__reviews-slider-item-user">
+                                    <p>
+                                        <b class="title-h5 tx-secondary">Peter F.</b>
+                                        <span>17 Февраля 2022</span>
+                                    </p>
+                                    <i><img src="dist/images/news/ava.jpg" alt="avatar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions__news">
+                        <div class="actions__news-title">
+                            <h2 class="tx-white">Последние новости</h2>
+                        </div>
+                        <div class="actions__news-list">
+                            <a href="#" class="actions__news-item">
+                                <h5>Солнечная электроэнергетика для нас приоритетное направление</h5>
+                                <span class="body-thin">19 Февраля 2022</span>
+                                <p>
+                                    Направление альтернативной энергетики, основанное на непосредственном использовании
+                                    солнечного излучения для получения энергии...
+                                </p>
+                                <h6 class="separate-title"><span>подробнее</span></h6>
+                            </a>
+                            <a href="#" class="actions__news-item">
+                                <h5>Солнечная электроэнергетика для нас приоритетное направление</h5>
+                                <span class="body-thin">19 Февраля 2022</span>
+                                <p>
+                                    Направление альтернативной энергетики, основанное на непосредственном использовании
+                                    солнечного излучения для получения энергии...
+                                </p>
+                                <h6 class="separate-title"><span>подробнее</span></h6>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions__aside"></div>
+        </section>
+
+        <section class="payments">
+            <div class="container">
+                <div class="payments__wrap">
+                    <div class="payments__title">
+                        <h5 class="separate-title"><span>платежные системы</span></h5>
+                    </div>
+
+                    <div class="payments__list">
+                        <ul>
+                            <li><a href="#"><img src="dist/images/pays/1.png" alt="bitcoin"></a></li>
+                            <li><a href="#"><img src="dist/images/pays/2.png" alt="bitcoin cash"></a></li>
+                            <li><a href="#"><img src="dist/images/pays/3.png" alt="ethereum"></a></li>
+                            <li><a href="#"><img src="dist/images/pays/4.png" alt="litecoin"></a></li>
+                            <li><a href="#"><img src="dist/images/pays/5.png" alt="ripple"></a></li>
+                            <li><a href="#"><img src="dist/images/pays/6.png" alt="tether"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+
+        <section class="footer-contact">
+            <div class="footer-contact__wrap">
+                <div class="container">
+                    <div class="footer-contact__info">
+                        <div class="footer-contact__title">
+                            <h5 class="separate-title"><span>контактная информация</span></h5>
+                        </div>
+
+                        <div class="footer-contact__list">
+                            <div class="footer-contact__item">
+                                <h6>Адрес компании:</h6>
+                                <p>Holborn Gate 330 High Holborn London, England WC1V 7QT</p>
+                            </div>
+                            <div class="footer-contact__item">
+                                <h6>Номер регистрации:</h6>
+                                <strong>4768073546</strong>
+                                <a href="#"><span class="title-h6">проверить</span></a>
+                            </div>
+                            <div class="footer-contact__item">
+                                <h6>поддежка 24/7:</h6>
+                                <a href="#">goldunicorn@info.com</a>
+                                <a href="#">goldunicorn@support.com</a>
+                            </div>
+                            <div class="footer-contact__item">
+                                <h6>мы в соцсетях:</h6>
+                                <ul class="footer-contact__social">
+                                    <li><a href="#"><i class="icon-fb"></i></a></li>
+                                    <li><a href="#"><i class="icon-ins"></i></a></li>
+                                    <li><a href="#"><i class="icon-tw"></i></a></li>
+                                    <li><a href="#"><i class="icon-yo"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="map" class="footer-contact__maps">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830962086!2d-74.11976348216282!3d40.69766374842546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2z0J3RjNGOLdCZ0L7RgNC6LCDQodCo0JA!5e0!3m2!1sru!2sby!4v1664180803309!5m2!1sru!2sby" width="100%" height="100%" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <section class="footer-colophon">
+            <div class="footer-colophon__logo">
+                <a href="/"><img src="dist/images/logo.png" alt="logo"> <span>tarvis</span></a>
+            </div>
+            <div class="footer-colophon__copy">
+                <p>Copyright © 2022 <span>Gold Unicorn Limited</span></p>
+                <p>Все права защищены.</p>
+            </div>
+            <nav class="footer-colophon__nav">
+                <ul class="footer-colophon__nav-list">
+                    <li><a href="about.html" class="footer-colophon__nav-item">О компании</a></li>
+                    <li><a href="partners.html" class="footer-colophon__nav-item">Инвесторы</a></li>
+                    <li><a href="referrals.html" class="footer-colophon__nav-item">рефералы</a></li>
+                    <li><a href="news.html" class="footer-colophon__nav-item">новости</a></li>
+                    <li><a href="faq.html" class="footer-colophon__nav-item">faq</a></li>
+                    <li><a href="contacts.html" class="footer-colophon__nav-item">контакты</a></li>
+                    <li><a href="registration.html" class="footer-colophon__nav-item">регистрация</a></li>
+                </ul>
+            </nav>
+            <div class="footer-colophon__agree">
+                <a href="agreements.html" class="footer-colophon__nav-item nav-item--agreements">соглашения</a>
+            </div>
+        </section>
+
+    </footer>
+
+</main>
+
+<!--
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&v=weekly" async></script>
+<script>
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 4,
+            center: { lat: 51.509865, lng: -0.118092 },
+        });
+        const image = "dist/images/marker.png";
+        const beachMarker = new google.maps.Marker({
+            position: { lat: 51.509865, lng: -0.118092},
+            map,
+            icon: image,
+        });
+    }
+</script>
+-->
+<script src="dist/js/scripts.min.js"></script>
+<script src="dist/js/scripts.js"></script>
+
+</body>
+</html>

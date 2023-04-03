@@ -1,0 +1,159 @@
+@mixin font-face($url, $weight){
+    @font-face{
+        src: local('#{$url}'),
+        url("../fonts/#{$url}.woff") format('woff'),
+        url("../fonts/#{$url}.woff2") format("woff2");
+
+        font-family: 'Stem';
+        font-weight: #{$weight};
+        font-style: normal;
+    }
+}
+
+@include font-face('Stem-Thin', 100);
+@include font-face('Stem-ExtraLight', 200);
+@include font-face('Stem-Light', 300);
+@include font-face('Stem-Regular', 400);
+@include font-face('Stem-Medium', 500);
+@include font-face('Stem-Semibold', 600);
+@include font-face('Stem-Extrabold', 700);
+@include font-face('Stem-Bold', 700);
+@include font-face('Stem-Heavy', 900);
+@include font-face('Stem-Black', 900);
+
+
+@font-face {
+    font-family: 'icons';
+    src: url('../fonts/icons.eot');
+    src: url('../fonts/icons.eot') format('embedded-opentype'),
+    url('../fonts/icons.ttf') format('truetype'),
+    url('../fonts/icons.woff') format('woff'),
+    url('../fonts/icons.svg?u58lz4#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icons' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-plus:before {
+    content: "\e900";
+}
+.icon-minus:before {
+    content: "\e901";
+}
+.icon-input-more:before {
+    content: "\e902";
+}
+.icon-close:before {
+    content: "\e903";
+}
+.icon-menu-9:before {
+    content: "\e904";
+}
+.icon-menu-8:before {
+    content: "\e905";
+}
+.icon-menu-7:before {
+    content: "\e906";
+}
+.icon-menu-6:before {
+    content: "\e907";
+}
+.icon-menu-5:before {
+    content: "\e908";
+}
+.icon-menu-4:before {
+    content: "\e909";
+}
+.icon-menu-3:before {
+    content: "\e90a";
+}
+.icon-menu-2:before {
+    content: "\e90b";
+}
+.icon-menu-1:before {
+    content: "\e90c";
+}
+.icon-check:before {
+    content: "\e90d";
+}
+.icon-faq-plus:before {
+    content: "\e90e";
+}
+.icon-faq-minus:before {
+    content: "\e90f";
+}
+.icon-faq-tab-6:before {
+    content: "\e910";
+}
+.icon-faq-tab-5:before {
+    content: "\e911";
+}
+.icon-faq-tab-4:before {
+    content: "\e912";
+}
+.icon-faq-tab-3:before {
+    content: "\e913";
+}
+.icon-faq-tab-2:before {
+    content: "\e914";
+}
+.icon-faq-tab-1:before {
+    content: "\e915";
+}
+.icon-left-arrow-black:before {
+    content: "\e916";
+}
+.icon-right-arrow-black:before {
+    content: "\e917";
+}
+.icon-bnb:before {
+    content: "\e918";
+}
+.icon-xrp:before {
+    content: "\e919";
+}
+.icon-trc:before {
+    content: "\e91a";
+}
+.icon-ltc:before {
+    content: "\e91b";
+}
+.icon-eth:before {
+    content: "\e91c";
+}
+.icon-btc:before {
+    content: "\e91d";
+}
+.icon-right-arrow:before {
+    content: "\e91e";
+}
+.icon-left-arrow:before {
+    content: "\e91f";
+}
+.icon-yo:before {
+    content: "\e920";
+}
+.icon-tw:before {
+    content: "\e921";
+}
+.icon-ins:before {
+    content: "\e922";
+}
+.icon-fb:before {
+    content: "\e923";
+}

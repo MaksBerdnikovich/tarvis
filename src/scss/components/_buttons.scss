@@ -1,0 +1,27 @@
+.btn{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 55px;
+    padding: 0 45px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 55px;
+    text-transform: uppercase;
+    text-align: center;
+
+    outline: none;
+    border: none;
+}
+
+.btn-primary{
+    background-color: $primary;
+    color: $white;
+}
+
+.btn-secondary{
+    background-color: $secondary;
+    color: $white;
+}

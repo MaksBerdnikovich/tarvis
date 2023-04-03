@@ -1,0 +1,66 @@
+.agreements {
+  position: relative;
+  min-height: 700px;
+  width: 100%;
+  margin-top: -120px;
+  padding-top: 230px;
+  z-index: 1;
+  overflow: hidden;
+
+  &__title {
+    position: relative;
+    z-index: 1;
+
+    .separate-title {
+      @include title-separator($primary);
+
+      margin-bottom: 40px;
+      color: $secondary;
+
+      span{
+        @include media-sm {
+          position: static;
+          padding: 0;
+        }
+
+        &:before{
+          @include media-sm {
+            top: -10px;
+          }
+        }
+      }
+    }
+  }
+
+  &__wrap {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__list{
+    list-style-type: none;
+    padding-left: 30px;
+
+    @include media-sm{
+      padding-left: 0;
+    }
+
+    li {
+      margin-top: 20px;
+    }
+  }
+
+  &__list-title{
+    font-size: 30px;
+    font-weight: 700;
+    color: $primary;
+    text-transform: none;
+  }
+
+  &__aside {
+    @include aside-block('../images/agree/ic1.png', $primary);
+    background-color: $separator-bg;
+    max-height: 720px;
+  }
+}

@@ -1,0 +1,179 @@
+.experience{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 790px;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+
+    @include media-sm{
+        margin-bottom: 80px;
+    }
+
+    &__wrap {
+        position: relative;
+        width: 100%;
+        padding-top: 110px;
+
+        @include media-sm{
+            padding-top: 40px;
+        }
+    }
+
+    &__info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+        max-width: 460px;
+
+        @include media-mdx{
+            max-width: 370px;
+        }
+
+        @include media-md{
+            max-width: 420px;
+        }
+
+        @include media-sm{
+            max-width: 100%;
+            text-align: left;
+        }
+    }
+
+    &__title {
+        margin-bottom: 50px;
+
+        @include media-sm{
+            margin-bottom: 30px;
+        }
+
+        .separate-title {
+            @include title-separator($primary, right);
+
+            @include media-sm{
+                @include title-separator($primary, left);
+            }
+        }
+    }
+
+    &__text{
+        .styled-subtitle{
+            @include media-sm{
+                font-size: 25px;
+            }
+        }
+    }
+
+    &__list{
+        margin-top: 40px;
+
+        ul{
+            display: flex;
+            flex-direction: column;
+        }
+
+        li{
+            position: relative;
+            font-size: 17px;
+            padding: 5px 20px 5px 0;
+
+            @include media-sm{
+                padding: 5px 20px;
+            }
+        }
+
+        li:after{
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 5px;
+            background-color: $primary;
+
+            @include media-sm{
+                right: auto;
+                left: 0;
+            }
+        }
+    }
+
+    &__btn{
+        margin-top: 70px;
+
+        @include media-sm{
+            margin-top: 30px;
+        }
+    }
+
+    &__aside {
+        @include aside-block('../images/trading/ic2.png', $primary, 110px);
+
+        @include media-md{
+            max-width: 310px;
+        }
+
+        @include media-sm{
+            position: relative;
+            min-height: 200px;
+            width: 100%;
+            max-width: 100%;
+            order: -1;
+            background-position: center center;
+
+            &:before{
+                top: 0;
+            }
+        }
+    }
+
+    &.experience--end .experience__info {
+        margin-left: auto;
+        text-align: left;
+    }
+
+    &.experience--end .experience__title .separate-title{
+        @include title-separator($secondary, left)
+    }
+
+    &.experience--end .experience__list li{
+        padding: 5px 0 5px 20px;
+    }
+
+    &.experience--end .experience__list li:after{
+        right: auto;
+        left: 0;
+        background-color: $secondary;
+    }
+
+    &.experience--end .experience__aside {
+        &:before, &:after{
+            left: auto;
+        }
+
+        @include aside-block('../images/trading/ic3.png', $secondary, 110px, left, right);
+
+        @include media-sm{
+            position: relative;
+            min-height: 200px;
+            width: 100%;
+            max-width: 100%;
+            order: -1;
+            background-position: center center;
+
+            &:before{
+                top: 0;
+                right: auto;
+                left: 0;
+            }
+
+            &:after{
+                display: none;
+            }
+        }
+    }
+}

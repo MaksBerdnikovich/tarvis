@@ -1,0 +1,258 @@
+.hero{
+    position: relative;
+    background-color: $dark;
+}
+
+.hero-slider{
+    position: relative;
+    width: 100%;
+    min-height: 920px;
+
+    @include media-sm{
+        min-height: auto;
+    }
+
+    &__item{
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 920px;
+        background-size: cover;
+        background-position: center center;
+
+        @include media-lg{
+            padding-left: 100px;
+        }
+
+        @include media-sm{
+            padding-left: 0;
+            min-height: 760px;
+            padding-top: 200px;
+            align-items: flex-start;
+        }
+    }
+
+    &__text{
+        display: inline-flex;
+        flex-direction: column;
+        max-width: 700px;
+        color: $white;
+
+        .separate-title{
+            max-width: 600px;
+            margin-top: 50px;
+            line-height: 50px;
+
+            @include title-separator($secondary, left, 30px);
+
+            @include media-md{
+                max-width: 500px;
+                margin-top: 30px;
+                line-height: 1.7;
+
+                @include title-separator($secondary, left, 17px);
+            }
+        }
+    }
+
+    .owl-nav{
+        right: 0;
+        bottom: 250px;
+    }
+
+    .owl-prev{
+        right: 290px;
+
+        @include media-lg{
+            right: 210px;
+        }
+
+        @include media-sm{
+            right: auto;
+            left: 50%;
+            margin-left: -55px;
+        }
+    }
+
+    .owl-next{
+        right: 220px;
+
+        @include media-lg{
+            right: 140px;
+        }
+
+        @include media-sm{
+            right: 50%;
+            margin-right: -55px;
+        }
+    }
+}
+
+.hero-banner{
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__wrap{
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 580px;
+
+        @include media-lg{
+            padding-left: 100px;
+        }
+
+        @include media-sm{
+            min-height: 450px;
+            padding-left: 0;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    &__title{
+        color: $white;
+        margin-left: -160px;
+
+        @include media-lgx{
+            margin-left: 0;
+        }
+    }
+}
+
+.hero-socials{
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    left: 0;
+    top: 80px;
+    width: 80px;
+    height: calc(100% - 80px);
+    z-index: 5;
+
+    @include media-sm{
+        top: 140px;
+        width: 100%;
+        height: auto;
+    }
+
+    &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -2px;
+        width: 2px;
+        height: 100%;
+        background-color: rgba($white, 0.1);
+        z-index: 0;
+
+        @include media-sm{
+            display: none;
+        }
+    }
+
+    ul{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+
+        @include media-sm{
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    li{
+        width: 100%;
+        height: 90px;
+        border-top: 2px solid rgba(255,255,255, 0.1);
+
+        @include media-sm{
+            width: auto;
+            height: auto;
+            border: 0;
+            margin: 0 20px;
+        }
+    }
+
+    a{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        font-size: 20px;
+        color: $white
+    }
+}
+
+.hero-courses{
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    right: 0;
+    bottom: 120px;
+    width: 80px;
+    height: calc(100% - 200px);
+    background-color: rgba($dark, 0.5);
+    z-index: 5;
+
+    @include media-sm{
+        display: none;
+    }
+
+    &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -2px;
+        width: 2px;
+        height: 100%;
+        background-color: rgba($white, 0.1);
+        z-index: 0;
+    }
+
+    ul{
+        display: flex;
+        height: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    li{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        min-height: 120px;
+        padding: 10px 5px 15px 5px;
+        text-align: center;
+        border-bottom: 2px solid rgba(255,255,255, 0.1);
+        color: $white;
+    }
+
+    i{
+        display: inline-flex;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    span{
+        display: inline-flex;
+        padding-bottom: 5px;
+        font-size: 10px;
+        color: $gray;
+    }
+
+    b{
+        display: inline-flex;
+        font-weight: 400;
+        font-size: 12px;
+        color: $secondary;
+    }
+}

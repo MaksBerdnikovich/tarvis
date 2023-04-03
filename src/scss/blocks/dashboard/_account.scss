@@ -1,0 +1,245 @@
+.account{
+    position: relative;
+
+    &__wrap{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include media-md{
+            flex-wrap: wrap;
+        }
+    }
+
+    &__deposit,
+    &__withdraw{
+        flex: 1 1 0;
+        min-height: calc(100% - 140px);
+        border: 2px solid $separator-db;
+
+        @include media-md{
+            order: 1;
+            margin-top: 30px;
+        }
+
+        @include media-sm{
+            margin-top: 20px;
+        }
+
+        ul{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        li{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            & + li{
+                margin-top: 40px;
+
+                @include media-mdx{
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        i{
+            margin-bottom: 20px;
+
+            img{
+                width: auto;
+            }
+        }
+
+        b{
+            text-transform: uppercase;
+        }
+
+        strong{
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: $secondary;
+        }
+    }
+
+    &__deposit{
+        padding: 30px 30px 30px 90px;
+        border-right: 0;
+
+        @include media-lgx{
+            padding: 30px 30px 30px 60px;
+        }
+
+        @include media-lg{
+            padding: 30px 20px;
+        }
+    }
+
+    &__withdraw{
+        padding: 30px 90px 30px 30px;
+        border-left: 0;
+
+        @include media-lgx{
+            padding: 30px 60px 30px 30px;
+        }
+
+        @include media-lg{
+            padding: 30px 20px;
+        }
+
+        li{
+            align-items: flex-end;
+            text-align: right;
+        }
+    }
+
+    &__referral{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 570px;
+        padding: 30px 20px;
+        border: 2px solid $separator-db;
+
+        @include media-mdx{
+            width: 450px;
+        }
+
+        @include media-md{
+            width: 100%;
+        }
+
+        @include media-sm{
+            padding: 20px;
+        }
+    }
+
+    &__referral-user,
+    &__referral-link{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 210px;
+
+        &:before{
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: $white;
+
+            background-repeat: no-repeat;
+            background-position: center center;
+            z-index: 1;
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            height: 70px;
+            width: calc(100% - 140px);
+        }
+    }
+
+    &__referral-user{
+        justify-content: flex-end;
+        padding: 20px 20px 30px 70px;
+        margin-bottom: 80px;
+        background-color: $secondary;
+
+        @include media-mdx{
+            padding: 30px;
+        }
+
+        @include media-xs{
+            padding: 20px 15px;
+        }
+
+        &:before{
+            left: 0;
+            bottom: -140px;
+            background-image: url("../images/db/ic2.png");
+        }
+
+        &:after{
+            left: 0;
+            bottom: -70px;
+            background-color: $secondary;
+        }
+
+        b{
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        strong{
+            font-size: 24px;
+            font-weight: 700;
+            color: $primary;
+            margin-bottom: 10px;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        a{
+            color: $main;
+            text-decoration: underline;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+    }
+
+    &__referral-link{
+        text-align: right;
+        align-items: flex-end;
+        padding: 20px 70px 30px 20px;
+        margin-top: 80px;
+        background-color: $primary;
+
+        @include media-mdx{
+            padding: 20px 30px;
+        }
+
+        @include media-xs{
+            padding: 20px 15px;
+        }
+
+        &:before{
+            right: 0;
+            top: -140px;
+            background-image: url("../images/db/ic3.png");
+        }
+
+        &:after{
+            right: 0;
+            top: -70px;
+            background-color: $primary;
+        }
+
+        b{
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        strong{
+            max-width: 350px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.8;
+            color: $styled;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        a{
+            color: $secondary;
+            text-decoration: underline;
+        }
+    }
+}

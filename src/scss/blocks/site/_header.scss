@@ -1,0 +1,255 @@
+.header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    min-height: 80px;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: transparent;
+    transition: $transition;
+    z-index: 1000;
+
+    &:after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: rgba($white, 0.1);
+        z-index: -1;
+    }
+
+    &.fixed{
+        background: rgba($dark, 0.95);
+        box-shadow: $shadow-bottom;
+    }
+
+    &.fixed .header-logo span{
+        opacity: 0;
+    }
+}
+
+.header-logo{
+    position: relative;
+    display: flex;
+    margin-right: 30px;
+
+    @include media-mdx{
+        margin: 0;
+    }
+
+    img{
+        width: 80px;
+    }
+
+    span{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: -30px;
+        font-size: 18px;
+        line-height: 1;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $white;
+        transition: $transition;
+    }
+}
+
+.header-nav{
+    position: relative;
+    display: flex;
+    margin-left: auto;
+    z-index: 1;
+
+    @include media-mdx{
+        position: absolute;
+        justify-content: center;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $primary;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 5;
+        transition: $transition;
+    }
+
+    &.open{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__list{
+        display: flex;
+
+        @include media-md{
+            flex-wrap: wrap;
+            padding: 0 60px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @include media-xs{
+            padding: 0 0 0 40px;
+        }
+    }
+
+    &__item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 80px;
+        padding: 0 30px;
+
+        font-size: 17px;
+        font-weight: 500;
+        color: $white;
+        text-transform: uppercase;
+        text-align: center;
+
+        &:hover{
+            opacity: 1;
+            background-color: rgba(255,255,255, 0.1);
+        }
+
+        @include media-lg{
+            padding: 0 13px;
+        }
+
+        @include media-md{
+            min-height: 40px;
+            font-size: 14px;
+            padding: 0 8px;
+        }
+
+        @include media-xs{
+
+        }
+    }
+
+    &__item.active{
+        background-color: $secondary;
+        opacity: 1;
+
+        @include media-mdx{
+            background-color: transparent;
+            color: $secondary;
+        }
+    }
+
+    &__item.cabinet{
+        padding: 0 70px;
+        background-color: $primary;
+
+        @include media-md{
+            min-height: 80px;
+        }
+
+        @include media-sm{
+            padding: 0 35px;
+        }
+
+        @include media-xs{
+            padding: 0 15px;
+        }
+    }
+    &__item.cabinet:hover{
+        opacity: 0.85;
+    }
+}
+
+.header-cabinet{
+    position: relative;
+    margin-left: 30px;
+
+    @include media-lg{
+        margin-left: 50px;
+    }
+
+    @include media-mdx{
+        margin-left: auto;
+    }
+}
+
+.header-lang{
+    position: relative;
+
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 100%;
+        background-color: $dark;
+
+        img{
+            width: auto;
+            max-width: 30px;
+        }
+    }
+}
+
+.header-nav-toggle{
+    display: none;
+
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: $primary;
+    cursor: pointer;
+    z-index: 6;
+
+    @include media-mdx{
+        display: flex;
+    }
+
+    .line-1, .line-2, .line-3{
+        position: absolute;
+        width: 28px;
+        height: 3px;
+        left: 50%;
+        margin-left: -13px;
+        top: 50%;
+        background-color: $white;
+        transition: $transition;
+    }
+
+    .line-1{
+        margin-top: -7px;
+    }
+
+    .line-3{
+        margin-top: 7px;
+    }
+
+    &.open {
+        @include media-md{
+            position: absolute;
+            width: 60px;
+            top: 0;
+            left: 0;
+        }
+
+        @include media-xs{
+            width: 40px;
+        }
+
+        .line-2{
+            opacity: 0;
+        }
+
+        .line-1 {
+            margin-top: -2px;
+            transform: rotate(40deg);
+        }
+
+        .line-3{
+            margin-top: -2px;
+            transform: rotate(-40deg);
+        }
+    }
+}

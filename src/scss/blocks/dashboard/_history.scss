@@ -1,0 +1,188 @@
+.history {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100px;
+
+    &__filter{
+        position: relative;
+        padding: 15px 30px 20px 30px;
+        margin-bottom: 40px;
+        background-color: $primary;
+
+        @include media-lg{
+            padding: 15px 25px 20px 25px;
+        }
+
+        @include media-sm{
+            padding: 15px 15px 20px 15px;
+        }
+    }
+
+    &__filter-list{
+        position: relative;
+        display: flex;
+        margin: 0 -15px;
+
+        @include media-lg{
+            flex-wrap: wrap;
+        }
+
+        @include media-sm{
+            flex-direction: column;
+        }
+    }
+
+    &__filter-item{
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 15px;
+        margin: 10px -5px;
+
+        .select-group{
+            position: relative;
+            padding: 0 5px;
+            width: 140px;
+
+            @include media-lgx{
+                width: auto;
+            }
+
+            .selectric{
+                min-width: 130px;
+
+                @include media-lgx{
+                    min-width: auto;
+                }
+            }
+        }
+
+        &.filter-item--operation .select-group{
+            width: 280px;
+
+            @include media-sm{
+                width: 100%;
+            }
+        }
+
+        &.filter-item--btn .select-group{
+            width: 150px;
+
+            @include media-sm{
+                width: 100%;
+            }
+
+            .btn{
+                width: 100%;
+            }
+        }
+    }
+
+    &__table{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        overflow: hidden;
+        overflow-x: auto;
+    }
+
+    &__table-col{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 25px;
+        flex: 1 1 auto;
+
+        span {
+            padding-bottom: 5px;
+            font-size: 14px;
+            color: $main;
+            line-height: 1;
+        }
+
+        p{
+            font-size: 13px;
+            color: $main;
+        }
+
+        b{
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        i{
+            font-size: 26px;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        &.col--ref{
+            min-width: 270px;
+            background-color: $primary;
+            z-index: 6;
+            @include triangle-right($primary, 8px);
+        }
+
+        &.col--pay{
+            max-width: 130px;
+            background-color: $primary-light;
+            z-index: 5;
+            @include triangle-right($primary-light, 8px);
+        }
+
+        &.col--recd, &.col--spend, &.col--balance{
+            padding: 15px 40px;
+            min-width: 210px;
+
+            b{
+                font-size: 16px;
+            }
+        }
+
+        &.col--recd{
+            background-color: $secondary;
+            z-index: 4;
+            @include triangle-right($secondary, 8px);
+        }
+
+        &.col--spend{
+            background-color: $primary;
+            z-index: 3;
+            @include triangle-right($primary, 8px);
+        }
+
+        &.col--balance{
+            background-color: $primary-light;
+            z-index: 2;
+            @include triangle-right($primary-light, 8px);
+        }
+
+        &.col--desc{
+            min-width: 280px;
+            max-width: 280px;
+            background-color: $primary-lighter;
+        }
+    }
+
+    &__slider{
+        position: relative;
+
+        .owl-nav{
+            bottom: -60px;
+        }
+
+        .owl-prev{
+            left: 50%;
+            margin-left: -60px;
+        }
+
+        .owl-next{
+            right: 50%;
+            margin-right: -60px;
+        }
+    }
+}

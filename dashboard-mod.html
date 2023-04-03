@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tarvis</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="dist/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="dist/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:title" content="Tarvis">
+    <meta property="og:site_name" content="Tarvis">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <link rel="stylesheet" href="dist/css/style.min.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body class="dashboard">
+
+<main class="main-content">
+
+    <section class="sidebar">
+        <div class="sidebar__logo">
+            <a href="/"><img src="dist/images/logo.png" alt="logo"> <span>tarvis</span></a>
+        </div>
+
+        <nav class="sidebar__nav" data-menu-nav>
+            <div class="sidebar__welcome">
+                <i><img src="dist/images/ava.svg" alt="avatar"></i>
+                <p>
+                    <b>Добро пожаловать!</b>
+                    <a href="javascript:void(0)" class="link" data-clipboard data-clipboard-text="UserName_9327952435">
+                        <span>UserName_9327952435</span>
+                    </a>
+                    <a href="/" class="exit"><span>выход</span></a>
+                </p>
+            </div>
+            <ul>
+                <li><a href="dashboard.html" class="active"><i class="icon-menu-1"></i> <span>Мой аккаунт</span></a></li>
+                <li><a href="open-deposit.html"><i class="icon-menu-2"></i> <span>открыть депозит</span></a></li>
+                <li><a href="deposits.html"><i class="icon-menu-3"></i> <span>мои депозиты</span></a></li>
+                <li><a href="history.html"><i class="icon-menu-4"></i> <span>истории</span></a></li>
+                <li><a href="withdraw.html"><i class="icon-menu-5"></i> <span>вывод</span></a></li>
+                <li><a href="payments.html"><i class="icon-menu-6"></i> <span>платежные реквезиты</span></a></li>
+                <li><a href="settings.html"><i class="icon-menu-7"></i> <span>настройки</span></a></li>
+                <li><a href="banners.html"><i class="icon-menu-8"></i> <span>партнеры и баннера</span></a></li>
+                <li><a href="dashboard-mod.html"><i class="icon-menu-9"></i> <span>выход</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar__toggle" data-menu-toggle>
+            <span class="line-1"></span>
+            <span class="line-2"></span>
+            <span class="line-3"></span>
+        </div>
+    </section>
+
+    <section class="wrapper">
+        <header class="header">
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="partners.html">Инвесторы и партнеры</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="agreements.html">Соглашения</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__socials">
+                <ul>
+                    <li><a href="#"><i class="icon-fb"></i></a></li>
+                    <li><a href="#"><i class="icon-ins"></i></a></li>
+                    <li><a href="#"><i class="icon-tw"></i></a></li>
+                    <li><a href="#"><i class="icon-yo"></i></a></li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="container">
+                <div class="account">
+                    <div class="content__title">
+                        <h2 class="separate-title"><span>Мой аккаунт</span></h2>
+                    </div>
+
+                    <div class="account__wrap">
+                        <div class="account__deposit">
+                            <ul>
+                                <li>
+                                    <i><img src="dist/images/db/ic1.png" alt="Последний депозит"></i>
+                                    <b>Последний депозит:</b>
+                                    <strong>2345.00 $</strong>
+                                </li>
+                                <li>
+                                    <i><img src="dist/images/db/ic1.png" alt="Активных депозитов"></i>
+                                    <b>Активных депозитов:</b>
+                                    <strong>2345.00 $</strong>
+                                </li>
+                                <li>
+                                    <i><img src="dist/images/db/ic1.png" alt="Всего инвестировано"></i>
+                                    <b>Всего инвестировано:</b>
+                                    <strong>2345.00 $</strong>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="account__referral">
+                            <div class="account__referral-user">
+                                <b>Вас пригласил:</b>
+                                <strong>UserName_038743564783</strong>
+                                <a href="javascript:void(0)" data-clipboard data-clipboard-text="username_038743564783@gmail.com">
+                                    <span>username_038743564783@gmail.com</span>
+                                </a>
+                            </div>
+                            <div class="account__referral-link">
+                                <b>Ваша ссылка для рефералов:</b>
+                                <strong id="referralLink">https://companyname.com/referral/link/JXyM9NdgBrq4_ViXhA4</strong>
+                                <a href="javascript:void(0)" data-clipboard data-clipboard-target="#referralLink">Копировать ссылку</a>
+                            </div>
+                        </div>
+                        <div class="account__withdraw">
+                            <ul>
+                                <li>
+                                    <i><img src="dist/images/db/ic4.png" alt="всего заработано"></i>
+                                    <b>всего заработано:</b>
+                                    <strong>2345.00 $</strong>
+                                </li>
+                                <li>
+                                    <i><img src="dist/images/db/ic4.png" alt="Ожидающие для вывода"></i>
+                                    <b>Ожидающие для вывода:</b>
+                                    <strong>2345.00 $</strong>
+                                </li>
+                                <li>
+                                    <i><img src="dist/images/db/ic4.png" alt="всего выведено"></i>
+                                    <b>всего выведено:</b>
+                                    <strong>2345.00 $</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__socials">
+                    <ul>
+                        <li><a href="#"><i class="icon-fb"></i></a></li>
+                        <li><a href="#"><i class="icon-ins"></i></a></li>
+                        <li><a href="#"><i class="icon-tw"></i></a></li>
+                        <li><a href="#"><i class="icon-yo"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <section class="userdata">
+        <div class="userdata__welcome">
+            <i><img src="dist/images/ava.svg" alt="avatar"></i>
+            <p>
+                <b>Добро пожаловать!</b>
+                <a href="javascript:void(0)" data-clipboard data-clipboard-text="UserName_9327952435">
+                    <span>UserName_9327952435</span>
+                </a>
+            </p>
+        </div>
+
+        <div class="userdata__balance">
+            <b>Ваш баланс:</b>
+            <strong class="title-h3">13 525.34 $</strong>
+            <a href="#">Пополнить</a>
+        </div>
+
+        <div class="userdata__info">
+            <ul>
+                <li class="info--link">
+                    <i><img src="dist/images/db/ic5.png" alt="Ваша реферальная ссылка:"></i>
+                    <b>Ваша реферальная ссылка:</b>
+                    <a href="javascript:void(0)" data-clipboard data-clipboard-text="https://companyname.com/referral/link/JXyM9NdgBrq4_ViXhA4">
+                        <span>https://companyname.com/referral/link/JXyM9NdgBrq4_ViXhA4</span>
+                    </a>
+                </li>
+                <li class="info--date">
+                    <i><img src="dist/images/db/ic6.png" alt="Дата регистрации:"></i>
+                    <b>Дата регистрации:</b>
+                    <span>24.12.2023 | 23:32</span>
+                </li>
+                <li class="info--enter">
+                    <i><img src="dist/images/db/ic7.png" alt="Последний вход:"></i>
+                    <b>Последний вход:</b>
+                    <span>24.12.2023 | 23:32</span>
+                </li>
+                <li class="info--ip">
+                    <i><img src="dist/images/db/ic8.png" alt="Вход с IP адреса:"></i>
+                    <b>Вход с IP адреса:</b>
+                    <span>123.22.123.456.7.8</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</main>
+
+
+<!-- Deposit Modal -->
+<div id="modalDeposit" class="modal modal--deposit" data-modal data-modal-opened>
+    <div class="modal__icon">
+        <i><img src="dist/images/db/ic13.png" alt="modal"></i>
+    </div>
+    <div class="modal__title">
+        <h2 class="separate-title"><span>Депозит</span></h2>
+    </div>
+    <div class="modal__body">
+        <div class="modal__body-table">
+            <table>
+                <tbody>
+                <tr><td>Статус:</td> <td class="tx-secondary">Активный</td></tr>
+                <tr><td>Создано:</td> <td>23.12.2022 | 23:34</td></tr>
+                <tr><td>План:</td> <td>2% dayly</td></tr>
+                <tr><td>Сумма:</td> <td class="tx-secondary">345.00$</td></tr>
+                <tr><td>Платежная система:</td> <td>Perfect money</td></tr>
+                <tr><td>Начисления:</td> <td><span class="tx-secondary">0</span> из 20</td></tr>
+                <tr><td>Последнее начисление:</td> <td>23.12.2022 | 23:34</td></tr>
+                <tr><td>Комиссия:</td> <td>345.00$</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal__body-btn">
+            <button class="btn btn-secondary" data-modal-close>Принять</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Success Modal -->
+<div id="modalSuccess" class="modal modal--success" data-modal>
+    <div class="modal__icon">
+        <i><img src="dist/images/db/ic14.png" alt="modal"></i>
+    </div>
+    <div class="modal__title">
+        <h2 class="separate-title"><span>Успешно</span></h2>
+    </div>
+    <div class="modal__body">
+        <div class="modal__body-text">
+            <strong>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore
+            </strong>
+        </div>
+        <div class="modal__body-btn">
+            <button class="btn btn-secondary" data-modal-close>Принять</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Confirm Modal -->
+<div id="modalConfirm" class="modal modal--confirm" data-modal>
+    <div class="modal__icon">
+        <i><img src="dist/images/db/ic15.png" alt="modal"></i>
+    </div>
+    <div class="modal__title">
+        <h2 class="separate-title"><span>Подтверждение</span></h2>
+    </div>
+    <div class="modal__body">
+        <div class="modal__body-text">
+            <strong>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore
+            </strong>
+        </div>
+        <div class="modal__body-btn">
+            <button class="btn btn-secondary" data-modal-close>Принять</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Error Modal -->
+<div id="modalError" class="modal modal--error" data-modal>
+    <div class="modal__icon">
+        <i><img src="dist/images/db/ic16.png" alt="modal"></i>
+    </div>
+    <div class="modal__title">
+        <h2 class="separate-title"><span>Ошибка!</span></h2>
+    </div>
+    <div class="modal__body">
+        <div class="modal__body-text">
+            <strong>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore
+            </strong>
+        </div>
+        <div class="modal__body-btn">
+            <button class="btn btn-primary" data-modal-close>вернуться</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Error Attention -->
+<div id="modalAttention" class="modal modal--attention" data-modal>
+    <div class="modal__icon">
+        <i><img src="dist/images/db/ic17.png" alt="modal"></i>
+    </div>
+    <div class="modal__title">
+        <h2 class="separate-title"><span>Внимание!</span></h2>
+    </div>
+    <div class="modal__body">
+        <div class="modal__body-text">
+            <strong>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore
+            </strong>
+        </div>
+        <div class="modal__body-btn">
+            <button class="btn btn-secondary" data-modal-close>Принять</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="dist/js/scripts.min.js"></script>
+<script src="dist/js/scripts.js"></script>
+</body>
+</html>

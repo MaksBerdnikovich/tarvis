@@ -1,0 +1,330 @@
+.sidebar {
+    position: relative;
+    width: 90px;
+
+    @include media-lgx{
+        position: absolute;
+        height: 100%;
+        left: 0;
+        top: 0;
+        order: 0;
+    }
+
+    @include media-sm{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding: 0 10px;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 2px;
+        background-color: $separator-db;
+
+        @include media-sm{
+            top: auto;
+            bottom: 0;
+            height: 2px;
+            width: 100%;
+        }
+    }
+
+    &__logo {
+        position: relative;
+        min-height: 135px;
+
+        @include media-sm{
+            max-width: 90px;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background-color: $separator-db;
+
+            @include media-sm{
+                display: none;
+            }
+        }
+
+        a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $white;
+            transition: $transition;
+
+            @include media-sm{
+                padding: 5px 0;
+            }
+        }
+
+        span {
+            margin-left: -3px;
+        }
+
+        img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__nav {
+        position: relative;
+
+        @include media-sm{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 20px;
+            background-color: $primary;
+            visibility: hidden;
+            opacity: 0;
+            transition: $transition;
+
+            &.open{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        ul {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            @include media-sm{
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 30px 0;
+            }
+
+            @include media-xs{
+                padding-bottom: 0;
+            }
+        }
+
+        li{
+            @include media-sm{
+                width: calc(100% / 4);
+                max-width: 94px;
+                border: 2px solid $separator-db;
+                margin: -1px;
+
+                &:last-child{
+                    display: none;
+                }
+            }
+        }
+
+        a {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 90px;
+            padding: 5px;
+            font-size: 12px;
+            font-weight: 300;
+            text-transform: uppercase;
+
+            @include media-xs{
+                font-size: 10px;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                background-color: $separator-db;
+
+                @include media-sm{
+                    display: none;
+                }
+            }
+
+            &.active {
+                background-color: $primary;
+                opacity: 1;
+
+                @include media-sm{
+                    background-color: $secondary;
+                    color: $white;
+
+                    i{
+                        color: $primary;
+                    }
+                }
+            }
+
+            i {
+                margin: 5px 0 10px 0;
+                font-size: 20px;
+                color: $secondary;
+            }
+        }
+    }
+
+    &__welcome{
+        display: none;
+        position: relative;
+        justify-content: center;
+
+        @include media-sm{
+            display: flex;
+        }
+
+        @include media-xs{
+            justify-content: flex-start;
+        }
+
+        i{
+            position: relative;
+            display: block;
+            width: 75px;
+            height: 75px;
+            padding: 3px;
+            border: 1px solid $separator-db;
+        }
+
+        p{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 15px;
+        }
+
+        b{
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .link, .exit{
+            color: $secondary;
+            min-height: auto;
+            border: 0;
+            text-align: left;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-transform: none;
+            padding: 0;
+            font-size: 14px;
+            text-decoration: none;
+
+            &:before, &:after{
+                display: none;
+            }
+        }
+
+        .exit{
+            text-decoration: underline;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding-top: 10px;
+        }
+    }
+
+    &__toggle{
+        display: none;
+
+        position: relative;
+        width: 80px;
+        height: 80px;
+        background-color: $primary;
+        cursor: pointer;
+        z-index: 101;
+
+        @include media-sm{
+            display: flex;
+        }
+
+        .line-1, .line-2, .line-3{
+            position: absolute;
+            width: 28px;
+            height: 3px;
+            left: 50%;
+            margin-left: -13px;
+            top: 50%;
+            background-color: $white;
+            transition: $transition;
+        }
+
+        .line-1{
+            margin-top: -7px;
+        }
+
+        .line-3{
+            margin-top: 7px;
+        }
+
+        &.open {
+            position: fixed;
+            top: 20px;
+            right: 10px;
+
+            .line-2{
+                opacity: 0;
+            }
+
+            .line-1 {
+                margin-top: -2px;
+                transform: rotate(40deg);
+            }
+
+            .line-3{
+                margin-top: -2px;
+                transform: rotate(-40deg);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

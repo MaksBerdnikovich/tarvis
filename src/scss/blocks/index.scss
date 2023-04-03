@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Stem';
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+/* SITE
+--------------------------------------------- */
+body.template {
+    font-size: 15px;
+    font-weight: 300;
+    color: $main;
+    background-color: $main-bg;
+    overflow-x: hidden;
+
+    @include scrollbar(10px);
+
+    .main-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100%;
+        overflow: hidden;
+    }
+
+    .wrapper {
+        position: relative;
+        flex: 1 0 auto;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 15px;
+        margin: 0 auto;
+
+        &.d-flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    @import "site/header";
+
+    @import "site/footer";
+
+    @import "site/hero";
+
+    @import "site/about";
+
+    @import "site/trading";
+
+    @import "site/calculator";
+
+    @import "site/experience";
+
+    @import "site/result";
+
+    @import "site/roadmap";
+
+    @import "site/actions";
+
+    @import "site/payments";
+
+    @import "site/steps";
+
+    @import "site/referral";
+
+    @import "site/faq";
+
+    @import "site/contact-form";
+
+    @import "site/agreements";
+
+    @import "site/contacts";
+
+    @import "site/registration";
+}
+
+
+/* DASHBOARD
+--------------------------------------------- */
+body.dashboard {
+    font-size: 14px;
+    font-weight: 300;
+    color: $white;
+    background-color: $styled;
+    overflow-x: hidden;
+
+    @include scrollbar(10px);
+
+    .main-content {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        min-height: 100%;
+        overflow: hidden;
+
+        background-image: url("../images/db/bg.jpg");
+        background-repeat: no-repeat;
+        background-position: center top;
+
+
+        @include media-lgx{
+            align-items: flex-start;
+        }
+    }
+
+    .wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 0;
+        max-width: calc(100% - 390px);
+
+        @include media-lgx{
+            max-width: calc(100% - 90px);
+            margin-left: auto;
+            order: 2;
+        }
+
+        @include media-sm{
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+        }
+    }
+
+    .content{
+        position: relative;
+        width: 100%;
+        padding: 40px 0;
+
+        @include media-lgx{
+            padding-bottom: 80px;
+        }
+
+        @include media-sm{
+            padding-bottom: 40px;
+        }
+
+        &__title {
+            margin-bottom: 40px;
+
+            .separate-title {
+                @include title-separator($secondary, center, 70%);
+
+                span{
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    .container{
+        padding: 0 70px;
+
+        @include media-lgx{
+            padding: 0 15px 0 30px;
+        }
+
+        @include media-md{
+            padding: 0 15px;
+        }
+    }
+
+    @import "dashboard/sidebar";
+
+    @import "dashboard/userdata";
+
+    @import "dashboard/header";
+
+    @import "dashboard/footer";
+    
+    @import "dashboard/account";
+
+    @import "dashboard/deposit";
+
+    @import "dashboard/deposit-plan";
+
+    @import "dashboard/deposit-calc";
+
+    @import "dashboard/deposit-list";
+
+    @import "dashboard/history";
+
+    @import "dashboard/withdraw";
+
+    @import "dashboard/payments";
+
+    @import "dashboard/settings";
+
+    @import "dashboard/partners";
+
+    @import "dashboard/banners";
+}

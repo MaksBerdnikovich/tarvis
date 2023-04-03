@@ -1,0 +1,124 @@
+// select group
+.select-group{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    label{
+        position: relative;
+        width: 100%;
+        padding-bottom: 5px;
+        font-size: 17px;
+    }
+
+    .selectric-wrapper{
+        position: relative;
+        width: 100%;
+    }
+
+    .selectric{
+        position: relative;
+        min-width: 100%;
+        width: 100%;
+        height: 55px;
+        padding: 0 20px;
+        border: none;
+        outline: none;
+        background: $input-bg;
+        color: $white;
+
+        .label{
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-size: 17px;
+            font-weight: 500;
+            user-select: none;
+            color: $white;
+        }
+
+        .button{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: 0;
+            top: 0;
+            width: 50px;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            text-align: center;
+            font: inherit;
+            font-size: 0;
+            text-indent: -9999;
+
+            &:after{
+                display: none;
+            }
+
+            &:before {
+                font-family: 'icons';
+                content: "\e902";
+                font-size: 8px;
+                color: $white;
+                transition: transform 0.2s ease-in-out;
+            }
+        }
+    }
+
+    .selectric-open .selectric .button {
+        &:before {
+            transform: scale(1, -1);
+        }
+    }
+
+    .selectric-items {
+        display: none;
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        border: 0;
+        z-index: -1;
+        background: $white;
+
+        ul{
+            display: flex;
+            flex-direction: column;
+        }
+
+        li {
+            position: relative;
+            width: 100%;
+            font-size: 15px;
+            padding: 10px 20px;
+            font-weight: 500;
+            background: transparent;
+
+            &:hover {
+                background: $gray-bg;
+                color: $primary;
+                transition: $transition;
+            }
+
+            &.highlighted{
+                background: $gray-light;
+                color: $white;
+            }
+        }
+
+        .selectric-scroll{
+            overflow: visible;
+        }
+    }
+
+    .selectric-open .selectric-items {
+        width: 100% !important;
+        display: block;
+    }
+}

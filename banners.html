@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tarvis</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="dist/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="dist/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:title" content="Tarvis">
+    <meta property="og:site_name" content="Tarvis">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <link rel="stylesheet" href="dist/css/style.min.css">
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body class="dashboard">
+
+<main class="main-content">
+
+    <section class="sidebar">
+        <div class="sidebar__logo">
+            <a href="/"><img src="dist/images/logo.png" alt="logo"> <span>tarvis</span></a>
+        </div>
+
+        <nav class="sidebar__nav" data-menu-nav>
+            <div class="sidebar__welcome">
+                <i><img src="dist/images/ava.svg" alt="avatar"></i>
+                <p>
+                    <b>Добро пожаловать!</b>
+                    <a href="javascript:void(0)" class="link" data-clipboard data-clipboard-text="UserName_9327952435">
+                        <span>UserName_9327952435</span>
+                    </a>
+                    <a href="/" class="exit"><span>выход</span></a>
+                </p>
+            </div>
+            <ul>
+                <li><a href="dashboard.html"><i class="icon-menu-1"></i> <span>Мой аккаунт</span></a></li>
+                <li><a href="open-deposit.html"><i class="icon-menu-2"></i> <span>открыть депозит</span></a></li>
+                <li><a href="deposits.html"><i class="icon-menu-3"></i> <span>мои депозиты</span></a></li>
+                <li><a href="history.html"><i class="icon-menu-4"></i> <span>истории</span></a></li>
+                <li><a href="withdraw.html"><i class="icon-menu-5"></i> <span>вывод</span></a></li>
+                <li><a href="payments.html"><i class="icon-menu-6"></i> <span>платежные реквезиты</span></a></li>
+                <li><a href="settings.html"><i class="icon-menu-7"></i> <span>настройки</span></a></li>
+                <li><a href="banners.html" class="active"><i class="icon-menu-8"></i> <span>партнеры и баннера</span></a></li>
+                <li><a href="dashboard-mod.html"><i class="icon-menu-9"></i> <span>выход</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar__toggle" data-menu-toggle>
+            <span class="line-1"></span>
+            <span class="line-2"></span>
+            <span class="line-3"></span>
+        </div>
+    </section>
+
+    <section class="wrapper">
+        <header class="header">
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О компании</a></li>
+                    <li><a href="partners.html">Инвесторы и партнеры</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="agreements.html">Соглашения</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__socials">
+                <ul>
+                    <li><a href="#"><i class="icon-fb"></i></a></li>
+                    <li><a href="#"><i class="icon-ins"></i></a></li>
+                    <li><a href="#"><i class="icon-tw"></i></a></li>
+                    <li><a href="#"><i class="icon-yo"></i></a></li>
+                </ul>
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="container">
+                <div class="partners">
+                    <div class="content__title">
+                        <h2 class="separate-title"><span>Партнеры</span></h2>
+                    </div>
+
+                    <div class="partners__data">
+                        <div class="partners__data-block">
+                            <div class="partners__data-item">
+                                <div class="partners__data-item-icon">
+                                    <img src="dist/images/db/ic11.png" alt="Общая реферальная прибыль">
+                                </div>
+                                <div class="partners__data-item-info">
+                                    <b>Общая реферальная прибыль:</b>
+                                    <strong>13 200.00 $</strong>
+                                    <ul>
+                                        <li>Всего рефералов: <span class="tx-dark">374</span></li>
+                                        <li>Активных рефералов: <span class="tx-secondary">374</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="partners__data-block">
+                            <div class="partners__data-item">
+                                <div class="partners__data-item-icon">
+                                    <img src="dist/images/db/ic12.png" alt="Общая реферальная прибыль">
+                                </div>
+                                <div class="partners__data-item-info">
+                                    <b>Ваша ссылка для рефералов:</b>
+                                    <code id="referralLink">https://companyname.com/referral/link/JXyM9NdgBrq4_ViXhA4</code>
+                                    <a href="javascript:void(0)" data-clipboard data-clipboard-target="#referralLink">Копировать ссылку</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="partners__level">
+                        <div class="partners__level-block">
+                            <div class="partners__level-item level-item--curr">
+                                <div class="partners__level-title">
+                                    <h4 class="separate-title"><span>Ваш уровень</span></h4>
+                                </div>
+                                <div class="partners__level-item-box">
+                                    <div class="partners__level-item-title"><b>Уровень</b> <strong>1</strong></div>
+                                    <div class="partners__level-item-step"><b class="title-h4">5 - 2 - 1 - 0.50</b></div>
+                                    <div class="partners__level-item-sum"><b class="title-h4">от 20$<br>до 20000$</b></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="partners__level-block">
+                            <div class="partners__level-item level-item--next">
+                                <div class="partners__level-title">
+                                    <h4 class="separate-title"><span>Следующий уровен</span></h4>
+                                </div>
+                                <div class="partners__level-item-box">
+                                    <div class="partners__level-item-title"><b>Уровень</b> <strong>2</strong></div>
+                                    <div class="partners__level-item-step"><b class="title-h4">5 - 2 - 1 - 0.50</b></div>
+                                    <div class="partners__level-item-sum"><b class="title-h4">от 20$<br>до 20000$</b></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="partners__progress">
+                            <div class="partners__progress-separator-prev"></div>
+                            <div class="partners__progress-prev">
+                                <b>Инвестировано:</b> <strong class="tx-secondary">16 000$</strong>
+                            </div>
+                            <div class="partners__progress-group">
+                                <div class="partners__progress-bar" style="width: 74%"></div>
+                            </div>
+                            <div class="partners__progress-next">
+                                <b>Необходимо:</b> <strong class="tx-primary">16 000$</strong>
+                            </div>
+                            <div class="partners__progress-separator-next"></div>
+                        </div>
+                    </div>
+
+                    <div class="partners__list">
+                        <div class="partners__list-title">
+                            <h3 class="separate-title"><span>Список ваших партнеров</span></h3>
+                        </div>
+
+                        <div class="partners__accordion accordion">
+                            <div class="accordion__item">
+                                <a href="#acc1" class="accordion__title" data-acc-nav>
+                                    <div class="accordion__title-lvl"><b>Линия</b> <strong>1</strong></div>
+                                    <div class="accordion__title-stat">
+                                        <p>Всего: <b>8 партнеров</b></p>
+                                        <p>Оборот: <b>32435.00$</b></p>
+                                        <p>Комиссия: <b>32435.00$</b></p>
+                                    </div>
+                                    <div class="accordion__title-icon"><i class="icon-plus"></i></div>
+                                </a>
+                                <div id="acc1" class="accordion__body" data-acc-body>
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th>логин</th>
+                                            <th>E-mail</th>
+                                            <th>Дата регистрации</th>
+                                            <th>депозит</th>
+                                            <th>Комиссия</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="login"><b class="tx-secondary">Username_237485277374</b></td>
+                                            <td class="email"><b class="tx-white">username_237485277374@gmail.com</b></td>
+                                            <td class="date"><span class="tx-white">23.05.2023</span></td>
+                                            <td class="dep"><strong class="tx-primary">35443.34$</strong></td>
+                                            <td class="com"><strong class="tx-secondary">35443.34$</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="login"><b class="tx-secondary">Username_237485277374</b></td>
+                                            <td class="email"><b class="tx-white">username_237485277374@gmail.com</b></td>
+                                            <td class="date"><span class="tx-white">23.05.2023</span></td>
+                                            <td class="dep"><strong class="tx-primary">35443.34$</strong></td>
+                                            <td class="com"><strong class="tx-secondary">35443.34$</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="login"><b class="tx-secondary">Username_237485277374</b></td>
+                                            <td class="email"><b class="tx-white">username_237485277374@gmail.com</b></td>
+                                            <td class="date"><span class="tx-white">23.05.2023</span></td>
+                                            <td class="dep"><strong class="tx-primary">35443.34$</strong></td>
+                                            <td class="com"><strong class="tx-secondary">35443.34$</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="login"><b class="tx-secondary">Username_237485277374</b></td>
+                                            <td class="email"><b class="tx-white">username_237485277374@gmail.com</b></td>
+                                            <td class="date"><span class="tx-white">23.05.2023</span></td>
+                                            <td class="dep"><strong class="tx-primary">35443.34$</strong></td>
+                                            <td class="com"><strong class="tx-secondary">35443.34$</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="login"><b class="tx-secondary">Username_237485277374</b></td>
+                                            <td class="email"><b class="tx-white">username_237485277374@gmail.com</b></td>
+                                            <td class="date"><span class="tx-white">23.05.2023</span></td>
+                                            <td class="dep"><strong class="tx-primary">35443.34$</strong></td>
+                                            <td class="com"><strong class="tx-secondary">35443.34$</strong></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="accordion__item">
+                                <a href="#acc2" class="accordion__title" data-acc-nav>
+                                    <div class="accordion__title-lvl"><b>Линия</b> <strong>2</strong></div>
+                                    <div class="accordion__title-stat">
+                                        <p>Всего: <b>8 партнеров</b></p>
+                                        <p>Оборот: <b>32435.00$</b></p>
+                                        <p>Комиссия: <b>32435.00$</b></p>
+                                    </div>
+                                    <div class="accordion__title-icon"><i class="icon-plus"></i></div>
+                                </a>
+                                <div id="acc2" class="accordion__body" data-acc-body>
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th>логин</th>
+                                            <th>E-mail</th>
+                                            <th>Дата регистрации</th>
+                                            <th>депозит</th>
+                                            <th>Комиссия</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="login"><b class="tx-secondary">Username_237485277374</b></td>
+                                            <td class="email"><b class="tx-white">username_237485277374@gmail.com</b></td>
+                                            <td class="date"><span class="tx-white">23.05.2023</span></td>
+                                            <td class="dep"><strong class="tx-primary">35443.34$</strong></td>
+                                            <td class="com"><strong class="tx-secondary">35443.34$</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="login"><b class="tx-secondary">Username_237485277374</b></td>
+                                            <td class="email"><b class="tx-white">username_237485277374@gmail.com</b></td>
+                                            <td class="date"><span class="tx-white">23.05.2023</span></td>
+                                            <td class="dep"><strong class="tx-primary">35443.34$</strong></td>
+                                            <td class="com"><strong class="tx-secondary">35443.34$</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="login"><b class="tx-secondary">Username_237485277374</b></td>
+                                            <td class="email"><b class="tx-white">username_237485277374@gmail.com</b></td>
+                                            <td class="date"><span class="tx-white">23.05.2023</span></td>
+                                            <td class="dep"><strong class="tx-primary">35443.34$</strong></td>
+                                            <td class="com"><strong class="tx-secondary">35443.34$</strong></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="accordion__item">
+                                <a href="#acc3" class="accordion__title" data-acc-nav>
+                                    <div class="accordion__title-lvl"><b>Линия</b> <strong>3</strong></div>
+                                    <div class="accordion__title-stat">
+                                        <p>Всего: <b>8 партнеров</b></p>
+                                        <p>Оборот: <b>32435.00$</b></p>
+                                        <p>Комиссия: <b>32435.00$</b></p>
+                                    </div>
+                                    <div class="accordion__title-icon"><i class="icon-plus"></i></div>
+                                </a>
+                                <div id="acc3" class="accordion__body" data-acc-body>
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th>логин</th>
+                                            <th>E-mail</th>
+                                            <th>Дата регистрации</th>
+                                            <th>депозит</th>
+                                            <th>Комиссия</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="login"><b class="tx-secondary">Username_237485277374</b></td>
+                                            <td class="email"><b class="tx-white">username_237485277374@gmail.com</b></td>
+                                            <td class="date"><span class="tx-white">23.05.2023</span></td>
+                                            <td class="dep"><strong class="tx-primary">35443.34$</strong></td>
+                                            <td class="com"><strong class="tx-secondary">35443.34$</strong></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banners">
+                    <div class="content__title">
+                        <h2 class="separate-title"><span>Баннеры</span></h2>
+                    </div>
+
+                    <div class="banners__tabs">
+                        <div class="banners__tab-nav">
+                            <ul>
+                                <li><a href="#tab1" data-tab-nav><b>Баннер: 728x90</b></a></li>
+                                <li><a href="#tab2" data-tab-nav><b>Баннер: 468x60</b></a></li>
+                                <li><a href="#tab3" data-tab-nav><b>Баннер: 240x400</b></a></li>
+                                <li><a href="#tab4" data-tab-nav><b>Баннер: 160x600</b></a></li>
+                                <li><a href="#tab5" data-tab-nav><b>Баннер: 150x150</b></a></li>
+                            </ul>
+                        </div>
+                        <div id="tab1" class="banners__tab-body" data-tab-body>
+                            <div class="banners__tab-image">
+                                <img src="dist/images/db/ban1.jpg" alt="Баннер: 728x90">
+                            </div>
+                            <div class="banners__tab-info">
+                                <b>ссылка на баннер:</b>
+                                <code id="banner1">https://companyname.com/referral/link/JXyM9NdgBrq4_ViXhA4</code>
+                                <a href="javascript:void(0)" data-clipboard data-clipboard-target="#banner1">Копировать ссылку</a>
+                            </div>
+                        </div>
+                        <div id="tab2" class="banners__tab-body" data-tab-body>
+                            <div class="banners__tab-image">
+                                <img src="dist/images/db/ban2.jpg" alt="Баннер: 468x60">
+                            </div>
+                            <div class="banners__tab-info">
+                                <b>ссылка на баннер:</b>
+                                <code id="banner2">https://companyname.com/referral/link/JXyM9NdgBrq4_ViXhA4</code>
+                                <a href="javascript:void(0)" data-clipboard data-clipboard-target="#banner2">Копировать ссылку</a>
+                            </div>
+                        </div>
+                        <div id="tab3" class="banners__tab-body" data-tab-body>
+                            <div class="banners__tab-image">
+                                <img src="dist/images/db/ban3.jpg" alt="Баннер: 240x400">
+                            </div>
+                            <div class="banners__tab-info">
+                                <b>ссылка на баннер:</b>
+                                <code id="banner3">https://companyname.com/referral/link/JXyM9NdgBrq4_ViXhA4</code>
+                                <a href="javascript:void(0)" data-clipboard data-clipboard-target="#banner3">Копировать ссылку</a>
+                            </div>
+                        </div>
+                        <div id="tab4" class="banners__tab-body" data-tab-body>
+                            <div class="banners__tab-image">
+                                <img src="dist/images/db/ban4.jpg" alt="Баннер: 160x600">
+                            </div>
+                            <div class="banners__tab-info">
+                                <b>ссылка на баннер:</b>
+                                <code id="banner4">https://companyname.com/referral/link/JXyM9NdgBrq4_ViXhA4</code>
+                                <a href="javascript:void(0)" data-clipboard data-clipboard-target="#banner4">Копировать ссылку</a>
+                            </div>
+                        </div>
+                        <div id="tab5" class="banners__tab-body" data-tab-body>
+                            <div class="banners__tab-image">
+                                <img src="dist/images/db/ban5.jpg" alt="Баннер: 150x150">
+                            </div>
+                            <div class="banners__tab-info">
+                                <b>ссылка на баннер:</b>
+                                <code id="banner5">https://companyname.com/referral/link/JXyM9NdgBrq4_ViXhA4</code>
+                                <a href="javascript:void(0)" data-clipboard data-clipboard-target="#banner5">Копировать ссылку</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__socials">
+                    <ul>
+                        <li><a href="#"><i class="icon-fb"></i></a></li>
+                        <li><a href="#"><i class="icon-ins"></i></a></li>
+                        <li><a href="#"><i class="icon-tw"></i></a></li>
+                        <li><a href="#"><i class="icon-yo"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <section class="userdata">
+        <div class="userdata__welcome">
+            <i><img src="dist/images/ava.svg" alt="avatar"></i>
+            <p>
+                <b>Добро пожаловать!</b>
+                <a href="javascript:void(0)" data-clipboard data-clipboard-text="UserName_9327952435">
+                    <span>UserName_9327952435</span>
+                </a>
+            </p>
+        </div>
+
+        <div class="userdata__balance">
+            <b>Ваш баланс:</b>
+            <strong class="title-h3">13 525.34 $</strong>
+            <a href="#">Пополнить</a>
+        </div>
+
+        <div class="userdata__info">
+            <ul>
+                <li class="info--link">
+                    <i><img src="dist/images/db/ic5.png" alt="Ваша реферальная ссылка:"></i>
+                    <b>Ваша реферальная ссылка:</b>
+                    <a href="javascript:void(0)" data-clipboard data-clipboard-text="https://companyname.com/referral/link/JXyM9NdgBrq4_ViXhA4">
+                        <span>https://companyname.com/referral/link/JXyM9NdgBrq4_ViXhA4</span>
+                    </a>
+                </li>
+                <li class="info--date">
+                    <i><img src="dist/images/db/ic6.png" alt="Дата регистрации:"></i>
+                    <b>Дата регистрации:</b>
+                    <span>24.12.2023 | 23:32</span>
+                </li>
+                <li class="info--enter">
+                    <i><img src="dist/images/db/ic7.png" alt="Последний вход:"></i>
+                    <b>Последний вход:</b>
+                    <span>24.12.2023 | 23:32</span>
+                </li>
+                <li class="info--ip">
+                    <i><img src="dist/images/db/ic8.png" alt="Вход с IP адреса:"></i>
+                    <b>Вход с IP адреса:</b>
+                    <span>123.22.123.456.7.8</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</main>
+
+<script src="dist/js/scripts.min.js"></script>
+<script src="dist/js/scripts.js"></script>
+</body>
+</html>

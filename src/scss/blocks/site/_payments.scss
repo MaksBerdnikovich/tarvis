@@ -1,0 +1,74 @@
+.payments {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: $primary;
+
+    &__wrap {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 130px;
+        z-index: 1;
+
+        @include media-sm{
+            padding-bottom: 30px;
+        }
+    }
+
+    &__title{
+        @include media-mdx{
+           display: none;
+        }
+
+        .separate-title {
+            @include title-separator($white)
+        }
+    }
+
+    &__list{
+        position: relative;
+        margin-left: auto;
+
+        @include media-mdx{
+            display: flex;
+            justify-content: center;
+            flex: 1 1 0;
+            margin-left: 0;
+        }
+
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            @include media-sm{
+                justify-content: center;
+            }
+
+            @include media-xs{
+                justify-content: flex-start;
+            }
+        }
+
+        li{
+            margin-left: 50px;
+
+            @include media-mdx{
+                margin: 0;
+                padding: 10px 25px;
+            }
+
+            @include media-sm{
+                padding: 15px 25px;
+            }
+
+            @include media-xs{
+                width: calc(100% / 3);
+                padding: 15px;
+            }
+        }
+    }
+}

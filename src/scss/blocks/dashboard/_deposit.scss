@@ -1,0 +1,41 @@
+.deposit{
+    position: relative;
+
+    &__wrap{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -50px;
+
+        @include media-lgx{
+            margin: 0 -15px;
+        }
+    }
+
+    &__block{
+        position: relative;
+        width: 50%;
+        min-height: 610px;
+        padding: 0 50px;
+
+        @include media-lgx{
+            padding: 0 15px;
+        }
+
+        @include media-md{
+            width: 100%;
+            min-height: auto;
+
+            &:last-child{
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &__invest {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+}

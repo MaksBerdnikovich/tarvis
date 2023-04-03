@@ -1,0 +1,115 @@
+.banners{
+    position: relative;
+    width: 100%;
+    margin: 80px 0 40px 0;
+
+    &__tabs{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__tab-nav{
+        position: relative;
+
+        ul{
+            display: flex;
+        }
+
+        li{
+            width: 50%;
+            max-width: 250px;
+        }
+
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 90px;
+            padding: 0 5px;
+            background-color: transparent;
+            text-align: center;
+            text-transform: uppercase;
+
+            &.active{
+                background-color: $primary;
+                opacity: 1;
+            }
+
+            span{
+                font-size: 12px;
+                letter-spacing: 1.5px;
+                color: $secondary;
+
+                @include media-mdx{
+                    letter-spacing: 0;
+                }
+            }
+
+            b{
+                font-size: 17px;
+                padding-top: 5px;
+
+                @include media-mdx{
+                    font-size: 15px;
+                }
+
+                @include media-sm{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    &__tab-body{
+        position: relative;
+        padding: 50px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $primary;
+    }
+
+    &__tab-image{
+        position: relative;
+        margin-bottom: 50px;
+
+        img{
+            width: auto;
+            max-width: 100%;
+        }
+    }
+
+    &__tab-info{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        b{
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        strong, code{
+            padding-bottom: 15px;
+            font-family: inherit;
+            font-size: 20px;
+            line-height: 1;
+            font-weight: 700;
+            color: $dark-bg;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        a{
+            text-decoration: underline;
+            color: $secondary;
+        }
+    }
+}
